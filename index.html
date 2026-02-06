@@ -30,7 +30,7 @@
               class="header__logo-img"
             />
           </div>
-          <span class="header__logo-sub">Ariel Núñez Salinas</span>
+          <span class="header__logo-sub" id="main_name"></span>
         </div>
         <div class="header__main">
           <ul class="header__links">
@@ -395,7 +395,7 @@
             </div>
           </div>
           <div class="main-footer__row main-footer__row-2">
-            <h4 class="heading heading-sm text-lt">John Doe</h4>
+            <h4 class="heading heading-sm text-lt" id="main_name"></h4>
             <p class="main-footer__short-desc">
               Lorem ipsum dolor sit amet consectetur adipisicing elit facilis
               tempora explicabo quae quod deserunt
@@ -414,5 +414,9 @@
     </footer>
 
     <script src="./index.js"></script>
+    <script type="module">
+        import { MAIN_NAME } from "./config.js";
+        document.querySelector("#main_name").textContent = MAIN_NAME;
+    </script>
   </body>
 </html>

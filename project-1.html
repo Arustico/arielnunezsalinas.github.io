@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Título del Proyecto 1</title>
+    <title>ETL TEST</title>
     <meta name="description" content="Case study page of Project" />
 
     <link rel="stylesheet" href="css/style.css" />
@@ -27,7 +27,7 @@
               class="header__logo-img"
             />
           </div>
-          <span class="header__logo-sub">John Doe</span>
+          <span class="header__logo-sub" id="main_name"></span>
         </div>
         <div class="header__main">
           <ul class="header__links">
@@ -209,22 +209,21 @@
             </div>
           </div>
           <div class="main-footer__row main-footer__row-2">
-            <h4 class="heading heading-sm text-lt">John Doe</h4>
+            <h4 class="heading heading-sm text-lt" id="main_name"></h4>
             <p class="main-footer__short-desc">
               Lorem ipsum dolor sit amet consectetur adipisicing elit facilis
               tempora explicabo quae quod deserunt
             </p>
           </div>
         </div>
-
-        <div class="main-footer__lower">
-          &copy; Copyright 2021. Made by
-          <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com"
-            >Ram Maheshwari</a
           >
         </div>
       </div>
     </footer>
     <script src="./index.js"></script>
+    <script type="module">
+        import { MAIN_NAME } from "./config.js";
+        document.querySelector("#main_name").textContent = MAIN_NAME;
+    </script>
   </body>
 </html>
