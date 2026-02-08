@@ -1,0 +1,65 @@
+// ==========================================
+// BUTTONS - Estilos de botones
+// ==========================================
+
+.btn {
+    display: inline-block;
+    padding: var(--btn-padding, 0.75rem 1.5rem);
+    border: none;
+    border-radius: var(--border-radius, 4px);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+
+    // Variante por defecto
+    &:hover {
+        transform: translateY(-2px);
+    }
+
+    // Variante bg
+    &--bg {
+        background-color: var(--primary-color);
+        color: white;
+
+        &:hover {
+            background-color: darken(var(--primary-color), 10%);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    // Variante theme
+    &--theme {
+        background-color: var(--secondary-color);
+        color: white;
+
+        &:hover {
+            background-color: darken(var(--secondary-color), 10%);
+        }
+    }
+
+    // Tamaño peque��o
+    &--sm {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    // Tamaño mediano
+    &--med {
+        padding: 0.75rem 1.5rem;
+    }
+
+    // Tamaño grande
+    &--lg {
+        padding: 1rem 2rem;
+        font-size: 1.125rem;
+    }
+
+    // Deshabilitado
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
