@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>ETL TEST</title>
+    <title>ETL - Dashboard</title>
     <meta name="description" content="Case study page of Project" />
 
     <link rel="stylesheet" href="css/style.css" />
@@ -22,7 +22,7 @@
         <div class="header__logo-container">
           <div class="header__logo-img-cont">
             <img
-              src="./assets/png/john-doe.png"
+              src="./assets/png/ariel-nunez.png"
               alt="Ram Maheshwari Logo Image"
               class="header__logo-img"
             />
@@ -32,18 +32,16 @@
         <div class="header__main">
           <ul class="header__links">
             <li class="header__link-wrapper">
-              <a href="./index.html" class="header__link"> Home </a>
+              <a href="./index.html" class="header__link" id="header_main_page"></a>
             </li>
             <li class="header__link-wrapper">
-              <a href="./index.html#about" class="header__link">About </a>
+              <a href="./index.html#about" class="header__link" id="header_about_name"></a>
             </li>
             <li class="header__link-wrapper">
-              <a href="./index.html#projects" class="header__link">
-                Projects
-              </a>
+              <a href="./index.html#projects" class="header__link" id="header_project_name"></a>
             </li>
             <li class="header__link-wrapper">
-              <a href="./index.html#contact" class="header__link"> Contact </a>
+              <a href="./index.html#contact" class="header__link" id="header_contact_name"></a>
             </li>
           </ul>
           <div class="header__main-ham-menu-cont">
@@ -64,19 +62,19 @@
         <div class="header__sm-menu-content">
           <ul class="header__sm-menu-links">
             <li class="header__sm-menu-link">
-              <a href="./index.html"> Home </a>
+              <a href="./index.html" id="header_main_page"></a>
             </li>
 
             <li class="header__sm-menu-link">
-              <a href="./index.html#about"> About </a>
+              <a href="./index.html#about" id="header_about_name"></a>
             </li>
 
             <li class="header__sm-menu-link">
-              <a href="./index.html#projects"> Projects </a>
+              <a href="./index.html#projects" id="header_project_name"></a>
             </li>
 
             <li class="header__sm-menu-link">
-              <a href="./index.html#contact"> Contact </a>
+              <a href="./index.html#contact" id="header_contact_name"></a>
             </li>
           </ul>
         </div>
@@ -84,16 +82,14 @@
     </header>
     <section class="project-cs-hero">
       <div class="project-cs-hero__content">
-        <h1 class="heading-primary">Project 1</h1>
+        <h1 class="heading-primary">Dashboard y automatización ETL con datos de vehículos</h1>
         <div class="project-cs-hero__info">
           <p class="text-primary">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
-            in numquam incidunt earum quaerat cum fuga, atque similique natus
-            nobis sit.
+            Prototipo de Extración, Transformación y Carga (ETL) que utilicé en algunos proyectos en que trabajé.
           </p>
         </div>
         <div class="project-cs-hero__cta">
-          <a href="#" class="btn btn--bg" target="_blank">Live Link</a>
+          <a href="#" class="btn btn--bg" target="_blank">Dashboard</a>
         </div>
       </div>
     </section>
@@ -109,54 +105,44 @@
           </div>
           <div class="project-details__content-main">
             <div class="project-details__desc">
-              <h3 class="project-details__content-title">Project Overview</h3>
+              <h3 class="project-details__content-title">Resumen del Proyecto</h3>
+              <span class="project-details__desc-para">
+                El objetivo es la creacion de un proceso de extraccion transformacion y carga de datos para ser utilizados con un dashboard que presente algunos analisis entorno a los datos. Los datos corresponden al
+              </span>
+              <a class="project-details__desc-para" href="https://www.subtrans.gob.cl/3cv/homologacion-de-vehiculos-livianos-medianos-y-motocicletas/"> Centro de Control y Certificación Vehicular</a>
+              <span class="project-details__desc-para">
+                 (3CV) que son pruebas de homologación a vehículos nuevos que entran al mercado chileno. Estos datos han permitido realizar distintos avances legislativos y controles que han derivado en estratégias para descarbonizar, y mejorar la tecnología entrante al país.
+              </span>
               <p class="project-details__desc-para">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-                alias tenetur minus quaerat aliquid, aut provident blanditiis,
-                deleniti aspernatur ipsam eaque veniam voluptatem corporis vitae
-                mollitia laborum corrupti ullam rem. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Neque alias tenetur minus quaerat
-                aliquid, aut provident blanditiis, deleniti aspernatur ipsam
-                eaque veniam voluptatem corporis vitae mollitia laborum corrupti
-                ullam rem?
-              </p>
-              <p class="project-details__desc-para">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-                alias tenetur minus quaerat aliquid, aut provident blanditiis,
-                deleniti aspernatur ipsam eaque veniam voluptatem corporis vitae
-                mollitia laborum corrupti ullam rem?
+                La creación requirio realizar una consulta a la página del 3CV, para esto se hizo un pequeño web scraping, ubicar el link de la base de datos y descargarla.  Posteriormente se debieron realizar transformaciones que permitiran limpiar y estructurar la data. Durante el proceso se realizaron respaldos mediante Google Storage.
               </p>
             </div>
             <div class="project-details__tools-used">
-              <h3 class="project-details__content-title">Tools Used</h3>
+              <h3 class="project-details__content-title">Herramientas Usadas</h3>
               <div class="skills">
-                <div class="skills__skill">HTML</div>
-                <div class="skills__skill">CSS</div>
-                <div class="skills__skill">JavaScript</div>
-                <div class="skills__skill">React</div>
-                <div class="skills__skill">SASS</div>
-                <div class="skills__skill">GIT</div>
-                <div class="skills__skill">Shopify</div>
-                <div class="skills__skill">Wordpress</div>
-                <div class="skills__skill">Google ADS</div>
-                <div class="skills__skill">Facebook Ads</div>
-                <div class="skills__skill">Android</div>
-                <div class="skills__skill">IOS</div>
+                <div class="skills__skill">Python</div>
+                <div class="skills__skill">Beautiful Soup</div>
+                <div class="skills__skill">Pandas</div>
+                <div class="skills__skill">Request</div>
+                <div class="skills__skill">Google Storage</div>
+                <div class="skills__skill">Google Cloud Plattaform</div>
+                <div class="skills__skill">Git</div>
+                <div class="skills__skill">Looker Studio</div>
               </div>
             </div>
             <div class="project-details__links">
-              <h3 class="project-details__content-title">See Live</h3>
+              <h3 class="project-details__content-title">Revisa el trabajo</h3>
               <a
                 href="#"
                 class="btn btn--med btn--theme project-details__links-btn"
                 target="_blank"
-                >Live Link</a
+                >Dashboard</a
               >
               <a
-                href="#"
+                href="https://github.com/Arustico/etl-dashboard-project-1/tree/main"
                 class="btn btn--med btn--theme-inv project-details__links-btn"
                 target="_blank"
-                >Code Link</a
+                >Código</a
               >
             </div>
           </div>
@@ -168,53 +154,55 @@
         <div class="main-footer__upper">
           <div class="main-footer__row main-footer__row-1">
             <h2 class="heading heading-sm main-footer__heading-sm">
-              <span>Social</span>
+              <span>Redes</span>
             </h2>
             <div class="main-footer__social-cont">
-              <a target="_blank" rel="noreferrer" href="#">
+              <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/arielnunezsalinas/">
                 <img
                   class="main-footer__icon"
                   src="./assets/png/linkedin-ico.png"
                   alt="icon"
                 />
               </a>
-              <a target="_blank" rel="noreferrer" href="#">
+              <a target="_blank" rel="noreferrer" href="https://github.com/Arustico/">
                 <img
                   class="main-footer__icon"
                   src="./assets/png/github-ico.png"
                   alt="icon"
                 />
               </a>
-              <a target="_blank" rel="noreferrer" href="#">
+<!--              <a target="_blank" rel="noreferrer" href="#">
                 <img
                   class="main-footer__icon"
                   src="./assets/png/twitter-ico.png"
                   alt="icon"
                 />
-              </a>
-              <a target="_blank" rel="noreferrer" href="#">
+              </a>-->
+<!--              <a target="_blank" rel="noreferrer" href="#">
                 <img
                   class="main-footer__icon"
                   src="./assets/png/yt-ico.png"
                   alt="icon"
                 />
-              </a>
-              <a target="_blank" rel="noreferrer" href="#">
+              </a>-->
+ <!--             <a target="_blank" rel="noreferrer" href="#">
                 <img
                   class="main-footer__icon main-footer__icon--mr-none"
                   src="./assets/png/insta-ico.png"
                   alt="icon"
                 />
-              </a>
+              </a>-->
             </div>
           </div>
           <div class="main-footer__row main-footer__row-2">
-            <h4 class="heading heading-sm text-lt" id="main_name"></h4>
+            <h4 class="heading heading-sm text-lt">Ariel Nuñez S.</h4>
             <p class="main-footer__short-desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit facilis
-              tempora explicabo quae quod deserunt
+              Entusiasta de la tecnología, poseo experiencia liderando proyectos de digitalización, modelación y análisis de datos en áreas como movilidad sostenible, calidad del aire y electro-movilidad.
             </p>
           </div>
+        </div>
+
+        <!-- ============================= -->
         </div>
           >
         </div>
@@ -222,8 +210,12 @@
     </footer>
     <script src="./index.js"></script>
     <script type="module">
-        import { MAIN_NAME } from "./config.js";
-        document.querySelector("#main_name").textContent = MAIN_NAME;
+        import * as config from "./config.js";
+        document.querySelector("#main_name").textContent = config.main_name;
+        document.querySelector("#header_main_page").textContent = config.header_main_page;
+        document.querySelector("#header_contact_name").textContent = config.header_contact_name;
+        document.querySelector("#header_about_name").textContent = config.header_about_name;
+        document.querySelector("#header_project_name").textContent = config.header_project_name;
     </script>
   </body>
 </html>

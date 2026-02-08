@@ -35,18 +35,16 @@
         <div class="header__main">
           <ul class="header__links">
             <li class="header__link-wrapper">
-              <a href="./index.html" class="header__link"> Principal </a>
+              <a href="./index.html" class="header__link" id="header_main_page"></a>
             </li>
             <li class="header__link-wrapper">
-              <a href="./index.html#about" class="header__link">Información</a>
+              <a href="./index.html#about" class="header__link" id=header_about_name></a>
             </li>
             <li class="header__link-wrapper">
-              <a href="./index.html#projects" class="header__link">
-                Proyectos
-              </a>
+              <a href="./index.html#projects" class="header__link" id="header_project_name"></a>
             </li>
             <li class="header__link-wrapper">
-              <a href="./index.html#contact" class="header__link"> Contacto </a>
+              <a href="./index.html#contact" class="header__link" id="header_contact_name"></a>
             </li>
           </ul>
           <div class="header__main-ham-menu-cont">
@@ -67,7 +65,7 @@
         <div class="header__sm-menu-content">
           <ul class="header__sm-menu-links">
             <li class="header__sm-menu-link">
-              <a href="./index.html"> Principal </a>
+              <a href="./index.html"> header_main_page </a>
             </li>
 
             <li class="header__sm-menu-link">
@@ -167,8 +165,7 @@
         <h2 class="heading heading-sec heading-sec__mb-med">
           <span class="heading-sec__main">Acerca de Mí</span>
           <span class="heading-sec__sub">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis
-            tempora explicabo quae quod deserunt eius sapiente
+            Entusiasta de la tecnología, poseo experiencia liderando proyectos de digitalización, modelación y análisis de datos en áreas como movilidad sostenible, calidad del aire y electro-movilidad.
           </span>
         </h2>
         <div class="about__content">
@@ -184,8 +181,7 @@
                 Actualmente estoy buscando nuevos desafios y aprendizajes, me interesa fuertemente todo lo relacionado a la inteligencia artificial, técnicas de aprendizaje y automatización. Así como también la instrumentación y medición de variables mediante sensores de bajo costo.
               </p>
               <p class="about__content-details-para">
-                Si crees que puedo ser un aporte en algún proyecto, puedes
-                <strong>contactarme</strong> acá:
+                Si crees que puedo ser un aporte para tu proyecto, no dudes en <strong>escribirme</strong>.
               </p>
             </div>
             <a href="./index.html#contact" class="btn btn--med btn--theme dynamicBgClr"
@@ -236,7 +232,7 @@
             <div class="projects__row-content">
               <h3 class="projects__row-content-title">Dashboard y automatización ETL con datos de vehículos</h3>
               <p class="projects__row-content-desc">
-                En Chile resumen ley de eficiencia enerética etc. HAcer dashboard, y ETL con GCP o con GitHub actions.
+                Proyecto que busca crear un proceso ETL de datos del 3CV, para luego de filtrar, construir un dashboard para visualizar los datos.
               </p>
               <a
                 href="./project-1.html"
@@ -302,8 +298,7 @@
         <h2 class="heading heading-sec heading-sec__mb-med">
           <span class="heading-sec__main heading-sec__main--lt">Contacto</span>
           <span class="heading-sec__sub heading-sec__sub--lt">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis
-            tempora explicabo quae quod deserunt eius sapiente
+            Si crees que puedo ser un aporte para tu proyecto, escríbeme un mensaje.
           </span>
         </h2>
         <div class="contact__form-container">
@@ -312,10 +307,10 @@
               <label class="contact__form-label" for="name">Name</label>
               <input
                 required
-                placeholder="Enter Your Name"
+                placeholder="Ingresa tu Nombre"
                 type="text"
                 class="contact__form-input"
-                name="name"
+                name="Nombre"
                 id="name"
               />
             </div>
@@ -323,10 +318,10 @@
               <label class="contact__form-label" for="email">Email</label>
               <input
                 required
-                placeholder="Enter Your Email"
+                placeholder="Ingresa tu Correo"
                 type="text"
                 class="contact__form-input"
-                name="email"
+                name="Correo"
                 id="email"
               />
             </div>
@@ -337,8 +332,8 @@
                 cols="30"
                 rows="10"
                 class="contact__form-input"
-                placeholder="Enter Your Message"
-                name="message"
+                placeholder="Escribe tu Mensaje"
+                name="Mensaje"
                 id="message"
               ></textarea>
             </div>
@@ -354,51 +349,50 @@
         <div class="main-footer__upper">
           <div class="main-footer__row main-footer__row-1">
             <h2 class="heading heading-sm main-footer__heading-sm">
-              <span>Social</span>
+              <span>Redes</span>
             </h2>
             <div class="main-footer__social-cont">
-              <a target="_blank" rel="noreferrer" href="#">
+              <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/arielnunezsalinas/">
                 <img
                   class="main-footer__icon"
                   src="./assets/png/linkedin-ico.png"
                   alt="icon"
                 />
               </a>
-              <a target="_blank" rel="noreferrer" href="#">
+              <a target="_blank" rel="noreferrer" href="https://github.com/Arustico/">
                 <img
                   class="main-footer__icon"
                   src="./assets/png/github-ico.png"
                   alt="icon"
                 />
               </a>
-              <a target="_blank" rel="noreferrer" href="#">
+<!--              <a target="_blank" rel="noreferrer" href="#">
                 <img
                   class="main-footer__icon"
                   src="./assets/png/twitter-ico.png"
                   alt="icon"
                 />
-              </a>
-              <a target="_blank" rel="noreferrer" href="#">
+              </a>-->
+<!--              <a target="_blank" rel="noreferrer" href="#">
                 <img
                   class="main-footer__icon"
                   src="./assets/png/yt-ico.png"
                   alt="icon"
                 />
-              </a>
-              <a target="_blank" rel="noreferrer" href="#">
+              </a>-->
+ <!--             <a target="_blank" rel="noreferrer" href="#">
                 <img
                   class="main-footer__icon main-footer__icon--mr-none"
                   src="./assets/png/insta-ico.png"
                   alt="icon"
                 />
-              </a>
+              </a>-->
             </div>
           </div>
           <div class="main-footer__row main-footer__row-2">
             <h4 class="heading heading-sm text-lt" id="main_name"></h4>
             <p class="main-footer__short-desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit facilis
-              tempora explicabo quae quod deserunt
+
             </p>
           </div>
         </div>
@@ -415,8 +409,26 @@
 
     <script src="./index.js"></script>
     <script type="module">
-        import { MAIN_NAME } from "./config.js";
-        document.querySelector("#main_name").textContent = MAIN_NAME;
+        import * as config from "./config.js";
+        document.querySelector("#main_name").textContent = config.main_name;
+        document.querySelector("#header_main_page").textContent = config.header_main_page;
+        document.querySelector("#header_contact_name").textContent = config.header_contact_name;
+        document.querySelector("#header_about_name").textContent = config.header_about_name;
+        document.querySelector("#header_project_name").textContent = config.header_project_name;
     </script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
