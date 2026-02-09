@@ -1,4 +1,30 @@
 
+// Tema de fondo
 $themeClrPrimary: #27231e;//#0062b9;
 
-$commonBorderRadius: 8px;
+$commonBorderRadius: 12px;
+
+// Colores
+$clr-primary: #7843e9;      // Botones principales, enlaces, branding.
+$clr-primary-sof: #a37cf0;  // Efectos hover o fondos de elementos destacados.
+$clr-dark: #111111;         //Títulos principales (H1, H2) y texto muy oscuro.
+$clr-gray: #555555;         //Cuerpo de texto (más legible que el negro puro).
+$clr-gray-light: #d1d1d1;   //Bordes, líneas divisorias o iconos secundarios.
+$clr-light: #f7f7f7;        //Fondos de secciones o "cards".
+$clr-white: #ffffff;        //Fondo principal y texto sobre botones oscuros.
+
+// Tipografía
+$font-primary: 'Montserrat', sans-serif;
+
+$fw-regular: 400;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-extrabold: 800;
+
+// Escala tipográfica (tipo Dopefolio)
+$fs-body: 1.6rem;      // 16px
+$fs-small: 1.4rem;
+
+$fs-h1: clamp(4rem, 7vw, 6.4rem);
+$fs-h2: 3.6rem;
+$fs-h3: 2.4rem;

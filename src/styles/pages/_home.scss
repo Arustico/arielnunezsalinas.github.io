@@ -9,7 +9,7 @@
       rgba(variables.$themeClrPrimary, 0.8),
       rgba(variables.$themeClrPrimary, 0.8)
     ),
-    url(../../assets/svg/common-bg.svg);
+    url(/images/svg/common-bg.svg);
   background-position: center;
 
   height: 100vh;
@@ -197,7 +197,7 @@
       rgba(variables.$themeClrPrimary, 0.8),
       rgba(variables.$themeClrPrimary, 0.8)
     ),
-    url(../../assets/svg/common-bg.svg);
+    url(/images/svg/common-bg.svg);
   background-size: cover;
   background-position: center;
 
