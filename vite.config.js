@@ -3,7 +3,7 @@ import path from 'path'
 
 export default defineConfig({
     root: 'src',
-    base: '/arielnunezsalinas-portfolio/',
+    base: '/arielnunezsalinas.github.io/',
 
     build: {
         outDir: '../dist',
