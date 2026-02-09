@@ -1,46 +1,39 @@
 // ===========================
-// ABSTRACTS (Configuración)
+// ABSTRACTS (PRIMERO)
 // ===========================
-@import 'abstracts/variables';
-@import 'abstracts/mixins';
-@import 'abstracts/functions';  // Opcional: funciones SCSS
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
 
 // ===========================
 // BASE (Estilos globales)
 // ===========================
-@import 'base/normalize';       // Reset CSS (o usar normalize.css)
-@import 'base/base';            // body, html, elementos base
-@import 'base/typography';      // h1, h2, p, etc
+@use 'base/normalize' as *;
+@use 'base/base' as *;
+@use 'base/typography' as *;
 
 // ===========================
 // LAYOUT (Estructura)
 // ===========================
-@import 'layout/container';     // .container, .main-container
-@import 'layout/grid';          // Sistema de grillas si lo necesitas
+@use 'layout/container' as *;
 
 // ===========================
-// COMPONENTS (Componentes UI)
+// COMPONENTS (UI)
 // ===========================
-@import 'components/header';
-@import 'components/footer';
-@import 'components/buttons';   // Estilos .btn (probablemente falta)
-@import 'components/forms';     // Estilos de formularios
-@import 'components/cards';     // Tarjetas de proyectos
-@import 'components/skills';
-@import 'components/mouse-scroll';
-@import 'components/menu';      // Menú hamburguesa
+@use 'components/buttons' as *;
+@use 'components/forms' as *;
+@use 'components/header' as *;
+@use 'components/footer' as *;
+@use 'components/skills' as *;
+@use 'components/menu' as *;
+@use 'components/mouse-scroll' as *;
 
 // ===========================
 // PAGES (Por página)
 // ===========================
-@import 'pages/home';
-@import 'pages/project-case-study';
+@use 'pages/home' as *;
+@use 'pages/project-case-study' as *;
 
 // ===========================
-// UTILITIES (Clases auxiliares)
+// UTILITIES (Último)
 // ===========================
-@import 'abstracts/utilities';
-
-
-
-
+@use 'abstracts/utilities' as *;

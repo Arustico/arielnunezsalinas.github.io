@@ -1,0 +1,262 @@
+// ==========================================
+// CONTAINER - Contenedores y layout
+// ==========================================
+
+// Variables
+:root {
+    --container-max-width: 1200px;
+    --container-padding: 1.5rem;
+    --container-padding-lg: 2rem;
+
+    --gutter: 1.5rem;      // Espaciado entre items
+    --gutter-sm: 1rem;
+    --gutter-lg: 2rem;
+}
+
+// Contenedor principal
+.main-container,
+.container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+
+    @media (max-width: 1024px) {
+        max-width: 90%;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+        max-width: 95%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    @media (max-width: 480px) {
+        max-width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    // Variantes de tamaño
+    &--sm {
+        max-width: 800px;
+    }
+
+    &--md {
+        max-width: 1000px;
+    }
+
+    &--lg {
+        max-width: 1400px;
+    }
+
+    &--full {
+        max-width: 100%;
+    }
+
+    // Sin padding
+    &--no-padding {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+// Contenedor con padding vertical
+.sec-pad {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    @media (max-width: 768px) {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+
+    @media (max-width: 480px) {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    &--lg {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+
+        @media (max-width: 768px) {
+            padding-top: 3.5rem;
+            padding-bottom: 3.5rem;
+        }
+    }
+
+    &--sm {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+
+// Row (fila con gutter)
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--gutter) / -2);
+    margin-right: calc(var(--gutter) / -2);
+
+    &--no-gutter {
+        margin-left: 0;
+        margin-right: 0;
+
+        > .col {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    &--gutter-sm {
+        margin-left: calc(var(--gutter-sm) / -2);
+        margin-right: calc(var(--gutter-sm) / -2);
+
+        > .col {
+            padding-left: calc(var(--gutter-sm) / 2);
+            padding-right: calc(var(--gutter-sm) / 2);
+        }
+    }
+
+    &--gutter-lg {
+        margin-left: calc(var(--gutter-lg) / -2);
+        margin-right: calc(var(--gutter-lg) / -2);
+
+        > .col {
+            padding-left: calc(var(--gutter-lg) / 2);
+            padding-right: calc(var(--gutter-lg) / 2);
+        }
+    }
+
+    // Alineación
+    &--center {
+        justify-content: center;
+    }
+
+    &--between {
+        justify-content: space-between;
+    }
+
+    &--around {
+        justify-content: space-around;
+    }
+
+    &--start {
+        justify-content: flex-start;
+    }
+
+    &--end {
+        justify-content: flex-end;
+    }
+
+    // Alineación vertical
+    &--v-center {
+        align-items: center;
+    }
+
+    &--v-start {
+        align-items: flex-start;
+    }
+
+    &--v-end {
+        align-items: flex-end;
+    }
+
+    &--v-stretch {
+        align-items: stretch;
+    }
+}
+
+// Columna
+.col {
+    flex: 1;
+    padding-left: calc(var(--gutter) / 2);
+    padding-right: calc(var(--gutter) / 2);
+    min-width: 0;
+
+    // Ancho fijo
+    &--1 { flex: 0 0 8.3333%; }
+    &--2 { flex: 0 0 16.6667%; }
+    &--3 { flex: 0 0 25%; }
+    &--4 { flex: 0 0 33.3333%; }
+    &--5 { flex: 0 0 41.6667%; }
+    &--6 { flex: 0 0 50%; }
+    &--7 { flex: 0 0 58.3333%; }
+    &--8 { flex: 0 0 66.6667%; }
+    &--9 { flex: 0 0 75%; }
+    &--10 { flex: 0 0 83.3333%; }
+    &--11 { flex: 0 0 91.6667%; }
+    &--12 { flex: 0 0 100%; }
+
+    // Responsivo
+    @media (max-width: 768px) {
+        &--md-1 { flex: 0 0 8.3333%; }
+        &--md-2 { flex: 0 0 16.6667%; }
+        &--md-3 { flex: 0 0 25%; }
+        &--md-4 { flex: 0 0 33.3333%; }
+        &--md-6 { flex: 0 0 50%; }
+        &--md-12 { flex: 0 0 100%; }
+    }
+
+    @media (max-width: 480px) {
+        &--sm-1 { flex: 0 0 8.3333%; }
+        &--sm-2 { flex: 0 0 16.6667%; }
+        &--sm-3 { flex: 0 0 25%; }
+        &--sm-4 { flex: 0 0 33.3333%; }
+        &--sm-6 { flex: 0 0 50%; }
+        &--sm-12 { flex: 0 0 100%; }
+    }
+}
+
+// Wrapper (contenedor simple)
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+// Content (contenido principal)
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+// Spacer (espaciador)
+.spacer {
+    height: 1rem;
+
+    &--sm { height: 0.5rem; }
+    &--md { height: 1.5rem; }
+    &--lg { height: 2rem; }
+    &--xl { height: 3rem; }
+
+    @media (max-width: 768px) {
+        height: 1rem;
+
+        &--sm { height: 0.5rem; }
+        &--md { height: 1rem; }
+        &--lg { height: 1.5rem; }
+    }
+}
+
+// Divider (separador)
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--border-color, #e0e0e0);
+    margin: 2rem 0;
+
+    &--sm {
+        margin: 1rem 0;
+    }
+
+    &--lg {
+        margin: 3rem 0;
+    }
+}
