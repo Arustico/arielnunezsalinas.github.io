@@ -1,8 +1,7 @@
 // ===========================
 // ABSTRACTS (PRIMERO)
 // ===========================
-@use 'abstracts/variables' as *;
-@use 'abstracts/mixins' as *;
+@use 'abstracts' as *;
 
 // ===========================
 // BASE (Estilos globales)
@@ -24,7 +23,7 @@
 @use 'components/header' as *;
 @use 'components/footer' as *;
 @use 'components/skills' as *;
-@use 'components/menu' as *;
+//@use 'components/menu' as *;
 @use 'components/mouse-scroll' as *;
 
 // ===========================
@@ -36,4 +35,4 @@
 // ===========================
 // UTILITIES (Último)
 // ===========================
-@use 'abstracts/utilities' as *;
+//@use 'abstracts/utilities' as *;

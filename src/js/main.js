@@ -14,4 +14,6 @@ document.querySelector("#header_about_name").textContent = config.header_about_n
 document.querySelector("#header_project_name").textContent = config.header_project_name;
 
 // Inicialización de handlers
-initMenuHandler();
+document.addEventListener('DOMContentLoaded', () => {
+    initMenuHandler()
+});
