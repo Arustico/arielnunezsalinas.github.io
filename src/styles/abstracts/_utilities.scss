@@ -12,6 +12,7 @@
 }
 
 .heading-sec {
+  justify-content: center;
   &__mb-bg {
     margin-bottom: 11rem;
     @include mixins.respond(tab-port) {
@@ -121,7 +122,7 @@
   }
   &--theme-inv {
     color: variables.$themeClrPrimary;
-    background: #fff;
+    background: variables.$clr-gray-light;
     border: 2px solid variables.$themeClrPrimary;
     box-shadow: none;
     padding: calc(1.5rem - 2px) calc(5rem - 2px);
@@ -138,7 +139,6 @@
 .text-primary {
   color: #fff;
   font-size: 2.2rem;
-  text-align: center;
   width: 100%;
   line-height: 1.6;
 
@@ -150,4 +150,16 @@
 
 .d-none {
   display: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
 }

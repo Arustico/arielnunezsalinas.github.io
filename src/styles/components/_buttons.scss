@@ -1,16 +1,19 @@
 // ==========================================
 // BUTTONS - Estilos de botones
 // ==========================================
+@use '../abstracts/variables' as *;
 
 :root {
+    // Tañamos de botones: small (sm), medium (md), large (lg) y gigante (xl)
     --btn-padding: 0.75rem 1.5rem;
     --btn-padding-sm: 0.5rem 1rem;
     --btn-padding-md: 0.75rem 1.5rem;
     --btn-padding-lg: 1rem 2rem;
+    --btn-padding-xl: 1.5rem 3.5rem;
     --btn-border-radius: 4px;
     --btn-transition: all 0.3s ease;
     --btn-font-weight: 600;
-    --primary-color: #0066cc;
+    --primary-color: #555555;
     --secondary-color: #ff6b00;
 }
 
@@ -64,6 +67,7 @@
 }
 
 .btn--bg:hover {
+    color: white;
     background-color: #0052a3;
     border-color: #0052a3;
     box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
@@ -87,6 +91,7 @@
 
 .btn--theme:hover {
     background-color: #e55c00;
+    color: white;
     border-color: #e55c00;
     box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
 }
@@ -151,6 +156,11 @@
 .btn--lg {
     padding: var(--btn-padding-lg);
     font-size: 1.125rem;
+}
+
+.btn--xl {
+    padding: var(--btn-padding-xl);
+    font-size: 1.5rem;
 }
 
 // ==================

@@ -60,12 +60,14 @@
   }
 
   &__showcase-img-cont {
+    display:flex;
     width: 100%;
     margin-bottom: 6rem;
   }
 
   &__showcase-img {
     width: 100%;
+    position: center;
   }
   &__content-main {
     width: 100%;
