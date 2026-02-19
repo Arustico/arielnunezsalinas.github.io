@@ -105,8 +105,16 @@
     <!-- ACÁ COLOCAR DASHBOARD -->
     <section id="project-img-details" class="project-details">
         <!-- Dashboard: -->
-        <div class="project-details__showcase-img-cont">
-       <iframe width="100%" src="https://lookerstudio.google.com/embed/reporting/0b41bfa3-dec7-4f20-bbf8-863aa367fa16/page/xfAoF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+        <div class="project-details__iframe-wrapper">
+        <div class="project-details__iframe-skeleton"></div>
+       <iframe
+       width="100%"
+       src="https://lookerstudio.google.com/embed/reporting/0b41bfa3-dec7-4f20-bbf8-863aa367fa16/page/xfAoF"
+       frameborder="0"
+       style="border:0"
+       onload="this.previousElementSibling.style.display='none'"
+       allowfullscreen
+       sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
         </iframe>
         </div>
         <div class="project-details__showcase-img-cont">
