@@ -34,7 +34,17 @@ const mobileMenu = {
     '.js-mobile-contact': { text: config.header_contact_name, href: `${base}/#contact` },
 };
 
+const navLinks = {
+    header_main_page: `${base}/`,
+    header_project_name: `${base}/#projects`,
+    header_about_name: `${base}/#about`,
+    header_contact_name: `${base}/#contact`,
+};
 
+Object.entries(navLinks).forEach(([id, href]) => {
+    const el = document.getElementById(id);
+    if (el) el.setAttribute('href', href);
+});
 
 // Inicialización de handlers
 
