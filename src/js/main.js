@@ -27,8 +27,29 @@ document.querySelector("#header_contact_name").setAttribute('href', `${base}/#co
 // Para Mobile
 const mobileLinks = document.querySelectorAll('.header__sm-menu-link a');
 const mobilePaths = [`${base}/`, `${base}/#about`, `${base}/#projects`, `${base}/#contact`];
+const mobileMenu = {
+    '.js-mobile-main':    { text: config.header_main_page,    href: `${base}/` },
+    '.js-mobile-about':   { text: config.header_about_name,   href: `${base}/#about` },
+    '.js-mobile-projects':{ text: config.header_project_name, href: `${base}/#projects` },
+    '.js-mobile-contact': { text: config.header_contact_name, href: `${base}/#contact` },
+};
+
+
 
 // Inicialización de handlers
+
+mobileLinks.forEach((link, index) => {
+    link.setAttribute('href', mobilePaths[index]);
+});
+
+Object.entries(mobileMenu).forEach(([selector, { text, href }]) => {
+    const el = document.querySelector(selector);
+    if (el) {
+        el.textContent = text;
+        el.setAttribute('href', href);
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     initMenuHandler()
 });
