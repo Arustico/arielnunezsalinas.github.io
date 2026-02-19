@@ -27,7 +27,7 @@
               class="header__logo-img"
             />
           </div>
-          <span class="header__logo-sub" id="main_name"></span>
+          <span class="header__logo-sub js-main-name"></span>
         </div>
 
         <!-- Menú Desktop -->
@@ -37,11 +37,12 @@
               <a href="/" class="header__link" id="header_main_page"></a>
             </li>
             <li class="header__link-wrapper">
-              <a href="/#about" class="header__link" id="header_about_name"></a>
-            </li>
-            <li class="header__link-wrapper">
               <a href="/#projects" class="header__link" id="header_project_name"></a>
             </li>
+            <li class="header__link-wrapper">
+              <a href="/#about" class="header__link" id="header_about_name"></a>
+            </li>
+
             <li class="header__link-wrapper">
               <a href="/#contact" class="header__link" id="header_contact_name"></a>
             </li>
@@ -96,13 +97,13 @@
           </p>
         </div>
         <div class="project-cs-hero__cta">
-          <a href="#" class="btn btn--xl" target="_blank">Explora</a>
+          <a href="#project-details" class="btn btn--xl btn--bg">Explorar</a>
         </div>
       </div>
     </section>
     <!-- Sección de detalles (acá diagrama y texto) -->
     <!-- ACÁ COLOCAR DASHBOARD -->
-    <section class="project-details">
+    <section id="project-img-details" class="project-details">
         <!-- Dashboard: -->
         <div class="project-details__showcase-img-cont">
        <iframe width="100%" src="https://lookerstudio.google.com/embed/reporting/0b41bfa3-dec7-4f20-bbf8-863aa367fa16/page/xfAoF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
@@ -116,27 +117,17 @@
         </div>
     </section>
 
-    <section class="project-details">
+    <section id="project-details" class="project-details">
       <div class="main-container">
         <div class="project-details__content">
 
         <div class="project-details__desc">
-            <h3 class="project-details__content-title">Project Overview</h3>
+            <h3 class="project-details__content-title">Resumen del Proyecto</h3>
                 <p class="project-details__desc-para">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-                alias tenetur minus quaerat aliquid, aut provident blanditiis,
-                deleniti aspernatur ipsam eaque veniam voluptatem corporis vitae
-                mollitia laborum corrupti ullam rem. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Neque alias tenetur minus quaerat
-                aliquid, aut provident blanditiis, deleniti aspernatur ipsam
-                eaque veniam voluptatem corporis vitae mollitia laborum corrupti
-                ullam rem?
+                    El objetivo es la creacion de un proceso de extraccion transformacion y carga de datos para ser utilizados con un dashboard que presente algunos analisis entorno a los datos. Los datos corresponden al Centro de Control y Certificación Vehicular 3CV que son pruebas de homologación a vehículos nuevos que entran al mercado chileno. Estos datos han permitido realizar distintos avances legislativos y controles que han derivado en estratégias para descarbonizar, y mejorar la tecnología entrante al país.
                 </p>
                 <p class="project-details__desc-para">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-                alias tenetur minus quaerat aliquid, aut provident blanditiis,
-                deleniti aspernatur ipsam eaque veniam voluptatem corporis vitae
-                mollitia laborum corrupti ullam rem?
+                    Para el flujo, se necesitó de GCP para que alojara la data cruda, y posteriormente alojara y sirviera la data procesada.
                 </p>
         </div>
         <div class="project-details__tools-used">
@@ -146,6 +137,7 @@
                 <div class="skills__skill">Pandas</div>
                 <div class="skills__skill">Request</div>
                 <div class="skills__skill">Beautiful Soup</div>
+                <div class="skills__skill">Google Cloud Plattaform (GCP)</div>
                 <div class="skills__skill">Cloud Storage (GCP)</div>
                 <div class="skills__skill">Looker Studio</div>
                 <div class="skills__skill">Git</div>
@@ -153,15 +145,17 @@
         </div>
 
         <div class="project-details__links">
-              <h3 class="project-details__content-title">See Live</h3>
+              <h3 class="project-details__content-title" id="explorar-links">Links</h3>
+              <!-- Link a Dashboard -->
               <a
-                href="#"
+                href="https://lookerstudio.google.com/reporting/0b41bfa3-dec7-4f20-bbf8-863aa367fa16"
                 class="btn btn--med btn--theme project-details__links-btn"
                 target="_blank"
                 >Live Link</a
               >
+              <!-- Link a Github -->
               <a
-                href="#"
+                href="https://github.com/Arustico/etl-dashboard-project-1"
                 class="btn btn--med btn--theme-inv project-details__links-btn"
                 target="_blank"
                 >Code Link</a
@@ -171,7 +165,6 @@
     </div>
     </section>
 
-    <!-- Sección 6/6: Footer -->
     <!-- Sección 6/6: Footer -->
     <footer class="main-footer">
       <div class="main-container">
@@ -212,7 +205,7 @@
 
           <!-- Información -->
           <div class="main-footer__row main-footer__row-2">
-            <h4 class="heading heading-sm text-lt" id="main_name_footer"></h4>
+            <h4 class="heading heading-sm js-main-name"></h4>
             <p class="main-footer__short-desc">
               Ingeniero Físico especializado en Ciencia de Datos
             </p>
