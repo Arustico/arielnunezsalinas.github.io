@@ -24,6 +24,9 @@ document.querySelector("#header_about_name").setAttribute('href', `${base}/#abou
 document.querySelector("#header_contact_name").textContent = config.header_contact_name;
 document.querySelector("#header_contact_name").setAttribute('href', `${base}/#contact`);
 
+// Para Mobile
+const mobileLinks = document.querySelectorAll('.header__sm-menu-link a');
+const mobilePaths = [`${base}/`, `${base}/#about`, `${base}/#projects`, `${base}/#contact`];
 
 // Inicialización de handlers
 document.addEventListener('DOMContentLoaded', () => {
