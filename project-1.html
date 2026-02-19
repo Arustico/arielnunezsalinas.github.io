@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto 1 - Dashboard ETL | Portafolio A.N.</title>
+    <meta name="description" content="Dashboard y automatización ETL con datos de vehículos" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/arielnunezsalinas.github.io/assets/main-B64TE2zF.js"></script>
+    <link rel="stylesheet" crossorigin href="/arielnunezsalinas.github.io/assets/main-B70doErA.css">
+  </head>
+
+  <body>
+    <!-- Sección 1/6: Encabezado principal -->
+    <header class="header">
+      <div class="header__content">
+        <div class="header__logo-container">
+          <div class="header__logo-img-cont">
+            <!-- Logo -->
+            <img
+              src="/arielnunezsalinas.github.io/images/png/ariel-nunez.png"
+              alt="Logo Ariel Núñez"
+              class="header__logo-img"
+            />
+          </div>
+          <span class="header__logo-sub js-main-name"></span>
+        </div>
+
+        <!-- Menú Desktop -->
+        <div class="header__main">
+          <ul class="header__links">
+            <li class="header__link-wrapper">
+              <a href="/" class="header__link" id="header_main_page"></a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="/#projects" class="header__link" id="header_project_name"></a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="/#about" class="header__link" id="header_about_name"></a>
+            </li>
+
+            <li class="header__link-wrapper">
+              <a href="/#contact" class="header__link" id="header_contact_name"></a>
+            </li>
+          </ul>
+
+          <!-- Menú Hamburguesa -->
+          <div class="header__main-ham-menu-cont">
+            <img
+              src="/arielnunezsalinas.github.io/images/svg/ham-menu.svg"
+              alt="Abrir menú"
+              class="header__main-ham-menu"
+            />
+            <img
+              src="/arielnunezsalinas.github.io/images/svg/ham-menu-close.svg"
+              alt="Cerrar menú"
+              class="header__main-ham-menu-close d-none"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Menú Mobile -->
+      <div class="header__sm-menu">
+        <div class="header__sm-menu-content">
+          <ul class="header__sm-menu-links">
+            <li class="header__sm-menu-link">
+              <a href="/">Principal</a>
+            </li>
+            <li class="header__sm-menu-link">
+              <a href="/#about">Acerca</a>
+            </li>
+            <li class="header__sm-menu-link">
+              <a href="/#projects">Proyectos</a>
+            </li>
+            <li class="header__sm-menu-link">
+              <a href="/#contact">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!-- Fin Encabezadp: sección 1 -->
+
+    <!-- Contenido específico del proyecto -->
+    <!-- Sección presentación -->
+    <section class="project-cs-hero">
+      <div class="project-cs-hero__content">
+        <h1 class="heading-sec __main text-center">Dashboard y automatización ETL con datos de vehículos</h1>
+        <div class="project-cs-hero__info">
+          <p class="text-primary text-left">
+            Proyecto que tuvo como objetivo diseñar un proceso ETL que involucró datos del 3CV que estaban disponible desde su página, buckets de la plataforma de google cloud (GCP) para back up y servir la data, finalmente con la data limpia, diseñar un dashboard para visualizar los datos.
+          </p>
+        </div>
+        <div class="project-cs-hero__cta">
+          <a href="#project-details" class="btn btn--xl btn--bg">Explorar</a>
+        </div>
+      </div>
+    </section>
+    <!-- Sección de detalles (acá diagrama y texto) -->
+    <!-- ACÁ COLOCAR DASHBOARD -->
+    <section id="project-img-details" class="project-details">
+        <!-- Dashboard: -->
+        <div class="project-details__showcase-img-cont">
+       <iframe width="100%" src="https://lookerstudio.google.com/embed/reporting/0b41bfa3-dec7-4f20-bbf8-863aa367fa16/page/xfAoF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+        </iframe>
+        <!-- Diagrama: -->
+        <img
+            src="/arielnunezsalinas.github.io/diagrams/isoflow-etl-dashboard.png"
+            alt="Project Image"
+            class="project-details__showcase-img"
+        />
+        </div>
+    </section>
+
+    <section id="project-details" class="project-details">
+      <div class="main-container">
+        <div class="project-details__content">
+
+        <div class="project-details__desc">
+            <h3 class="project-details__content-title">Resumen del Proyecto</h3>
+                <p class="project-details__desc-para">
+                    El objetivo es la creacion de un proceso de extraccion transformacion y carga de datos para ser utilizados con un dashboard que presente algunos analisis entorno a los datos. Los datos corresponden al Centro de Control y Certificación Vehicular 3CV que son pruebas de homologación a vehículos nuevos que entran al mercado chileno. Estos datos han permitido realizar distintos avances legislativos y controles que han derivado en estratégias para descarbonizar, y mejorar la tecnología entrante al país.
+                </p>
+                <p class="project-details__desc-para">
+                    Para el flujo, se necesitó de GCP para que alojara la data cruda, y posteriormente alojara y sirviera la data procesada.
+                </p>
+        </div>
+        <div class="project-details__tools-used">
+            <h3 class="project-details__content-title">Herramientas Utilizadas</h3>
+            <div class="skills">
+                <div class="skills__skill">Python</div>
+                <div class="skills__skill">Pandas</div>
+                <div class="skills__skill">Request</div>
+                <div class="skills__skill">Beautiful Soup</div>
+                <div class="skills__skill">Google Cloud Plattaform (GCP)</div>
+                <div class="skills__skill">Cloud Storage (GCP)</div>
+                <div class="skills__skill">Looker Studio</div>
+                <div class="skills__skill">Git</div>
+            </div>
+        </div>
+
+        <div class="project-details__links">
+              <h3 class="project-details__content-title" id="explorar-links">Links</h3>
+              <!-- Link a Dashboard -->
+              <a
+                href="https://lookerstudio.google.com/reporting/0b41bfa3-dec7-4f20-bbf8-863aa367fa16"
+                class="btn btn--med btn--theme project-details__links-btn"
+                target="_blank"
+                >Live Link</a
+              >
+              <!-- Link a Github -->
+              <a
+                href="https://github.com/Arustico/etl-dashboard-project-1"
+                class="btn btn--med btn--theme-inv project-details__links-btn"
+                target="_blank"
+                >Code Link</a
+              >
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Sección 6/6: Footer -->
+    <footer class="main-footer">
+      <div class="main-container">
+        <!-- Fila superior -->
+        <div class="main-footer__upper">
+          <!-- Redes Sociales -->
+          <div class="main-footer__row main-footer__row-1">
+<!--            <h2 class="heading heading-sm main-footer__heading-sm">
+              <span>Redes Sociales</span>
+            </h2>-->
+            <div class="main-footer__social-cont">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.linkedin.com/in/arielnunezsalinas/"
+                title="LinkedIn"
+              >
+                <img
+                  class="main-footer__icon"
+                  src="/arielnunezsalinas.github.io/icons/linkedin-ico.png"
+                  alt="LinkedIn"
+                />
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/Arustico/"
+                title="GitHub"
+              >
+                <img
+                  class="main-footer__icon"
+                  src="/arielnunezsalinas.github.io/icons/github-ico.png"
+                  alt="GitHub"
+                />
+              </a>
+            </div>
+          </div>
+
+          <!-- Información -->
+          <div class="main-footer__row main-footer__row-2">
+            <h4 class="heading heading-sm js-main-name"></h4>
+            <p class="main-footer__short-desc">
+              Ingeniero Físico especializado en Ciencia de Datos
+            </p>
+          </div>
+        </div>
+
+        <!-- Fila inferior -->
+        <div class="main-footer__lower">
+          <p>
+            Trabajo modificado, basado en
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://rammaheshwari.com"
+            >Ram Maheshwari</a>
+          </p>
+          <p>© 2025 Ariel Núñez. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
