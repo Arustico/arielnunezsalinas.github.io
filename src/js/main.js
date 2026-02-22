@@ -7,6 +7,9 @@ import { initMenuHandler } from './menu-handler.js';
 
 // 3. Inicialización
 const base = config.base;
+console.log('URL:', import.meta.env.VITE_FORM_URL); // agrega esto temporalmente
+console.log('URL:', import.meta.env.VITE_FORM_TOKEN); // agrega esto temporalmente
+
 
 document.addEventListener('DOMContentLoaded', () => {
 

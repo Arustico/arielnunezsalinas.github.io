@@ -4,6 +4,7 @@ import { resolve } from 'path'
 
 export default defineConfig({
     root: 'src',
+    envDir: '../',  // variables .env
     base: '/arielnunezsalinas.github.io/',
 
     build: {
