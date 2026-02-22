@@ -54,6 +54,33 @@ document.addEventListener('DOMContentLoaded', () => {
         btnProjects.setAttribute('href', `${base}/#projects`);
     }
 
+    // Formulario de contacto
+    const form = document.querySelector('.contact__form');
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = {
+                token:    import.meta.env.VITE_FORM_TOKEN,
+                honeypot: form.honeypot.value,
+                nombre:   form.nombre.value,
+                email:    form.email.value,
+                mensaje:  form.mensaje.value,
+            };
+
+            try {
+                await fetch(import.meta.env.VITE_FORM_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                });
+                alert('¡Mensaje enviado!');
+                form.reset();
+            } catch (err) {
+                alert('Error al enviar. Intenta nuevamente.');
+            }
+        });
+    }
+
     // Handlers
     initMenuHandler();
 });
