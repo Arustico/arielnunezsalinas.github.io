@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 await fetch(import.meta.env.VITE_FORM_URL, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    //headers: { 'Content-Type': 'application/json' }, // No necesario para google script
                     body: JSON.stringify(data),
                 });
                 alert('¡Mensaje enviado!');
