@@ -1,12 +1,25 @@
 import { defineConfig } from 'vite'
 import path from 'path'
 import { resolve } from 'path'
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
     root: 'src',
     envDir: '../',  // variables .env
     base: '/arielnunezsalinas.github.io/',
+    // Copia las partes partciales de html para el deploy
+    plugins: [
+        viteStaticCopy({
+            targets:[
+                {
+                    src:"partials",
+                    dest: "."
+                }
+            ]
 
+        })
+    ],
+    // deply a dist
     build: {
         outDir: '../dist',
         emptyOutDir: true,

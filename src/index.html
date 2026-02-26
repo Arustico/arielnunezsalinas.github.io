@@ -2,104 +2,34 @@
 <!DOCTYPE html>
 <!-- Configuración general -->
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Portafolio A.N.</title>
-    <meta name="description" content="Portfolio de Ariel Núñez - Ingeniero Físico especializado en Ciencia de Datos" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title></title>
+        <meta name="description" content="" />
+        <!-- Preconnect para fuentes -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+        rel="stylesheet"
+        />
+        <!-- Favicon -->
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+    </head>
 
-    <!-- Preconnect para fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
+  <body data-page="home">
+    <!-- Header -->
+    <div id="header-placeholder"></div>
 
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
-  </head>
-
-  <body>
-    <!-- Sección 1/6: Encabezado principal -->
-    <header class="header">
-      <div class="header__content">
-        <div class="header__logo-container">
-          <div class="header__logo-img-cont">
-            <!-- Logo -->
-            <img
-              src="/images/png/ariel-nunez.png"
-              alt="Logo Ariel Núñez"
-              class="header__logo-img"
-            />
-          </div>
-          <span class="header__logo-sub js-main-name"></span>
-        </div>
-
-        <!-- Menú Desktop -->
-        <div class="header__main">
-          <ul class="header__links">
-            <li class="header__link-wrapper">
-              <a href="/" class="header__link" id="header_main_page"></a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="/#projects" class="header__link" id="header_project_name"></a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="/#about" class="header__link" id="header_about_name"></a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="/#contact" class="header__link" id="header_contact_name"></a>
-            </li>
-          </ul>
-
-          <!-- Menú Hamburguesa -->
-          <div class="header__main-ham-menu-cont">
-            <img
-              src="/images/svg/ham-menu.svg"
-              alt="Abrir menú"
-              class="header__main-ham-menu"
-            />
-            <img
-              src="/images/svg/ham-menu-close.svg"
-              alt="Cerrar menú"
-              class="header__main-ham-menu-close d-none"
-            />
-          </div>
-        </div>
-      </div>
-
-      <!-- Menú Mobile -->
-      <div class="header__sm-menu">
-        <div class="header__sm-menu-content">
-          <ul class="header__sm-menu-links">
-            <li class="header__sm-menu-link">
-              <a href="/" class="js-mobile-main"></a>
-            </li>
-            <li class="header__sm-menu-link">
-              <a href="/#about" class="js-mobile-about"></a>
-            </li>
-            <li class="header__sm-menu-link">
-              <a href="/#projects" class="js-mobile-projects"></a>
-            </li>
-            <li class="header__sm-menu-link">
-              <a href="/#contact" class="js-mobile-contact"></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </header>
-
-    <!-- Fin Sección 1 -->
-
-    <!-- Sección 2/6: Hero -->
+    <!-- Sección 2/6: Hero: Presentación -->
     <section class="home-hero">
       <div class="home-hero__content">
-        <h1 class="heading-primary">Ingeniero físico especializado en Ciencia de Datos</h1>
+        <h1 class="heading-primary">Ingeniero físico enfocado en Ciencia de Datos</h1>
         <div class="home-hero__info">
           <p class="text-primary --right-justify">
-            Te presento algunos de mis proyectos que puedo y he querido compartir para que conozcas mi trabajo.
+            Te presento algunos de mis proyectos que he querido compartir para que conozcas mi trabajo.
           </p>
         </div>
         <div class="home-hero__cta">
@@ -111,8 +41,8 @@
       <div class="home-hero__socials">
         <div class="home-hero__social">
           <a
-            href="https://www.linkedin.com/in/arielnunezsalinas"
-            class="home-hero__social-icon-link"
+            class='js-link-linkedin home-hero__social-icon-link'
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -125,8 +55,8 @@
         </div>
         <div class="home-hero__social">
           <a
-            href="https://github.com/Arustico"
-            class="home-hero__social-icon-link"
+            class="js-link-github home-hero__social-icon-link"
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -139,14 +69,14 @@
         </div>
         <div class="home-hero__social">
           <a
-            href="https://drive.google.com/file/d/1ZGW0gBb1jd_G9SdqKTguI2GQ6o1jGc1A/view?usp=sharing"
-            class="home-hero__social-icon-link"
+            href="#"
+            class="js-link-curriculum home-hero__social-icon-link"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img
               src="/icons/cv-ico.svg"
-              alt="Curriculum"
+              alt="Curriculum Vitae"
               class="home-hero__social-icon"
             />
           </a>
@@ -198,7 +128,7 @@
                 Si crees que puedo ser un aporte para tu proyecto, no dudes en <strong>escribirme</strong>.
               </p>
             </div>
-            <a href="/#contact" class="btn btn--med btn--theme">Contacto</a>
+            <a href="#" class="js-nav-contact btn btn--med btn--theme"></a>
           </div>
 
           <!-- Skills -->
@@ -379,81 +309,9 @@
 
     <!-- Fin Sección 5 -->
 
-    <!-- Sección 6/6: Footer -->
-    <footer class="main-footer">
-      <div class="main-container">
-        <!-- Fila superior -->
-        <div class="main-footer__upper">
-          <!-- Redes Sociales -->
-          <div class="main-footer__row main-footer__row-1">
-<!--            <h2 class="heading heading-sm main-footer__heading-sm">
-              <span>Redes Sociales</span>
-            </h2>-->
-            <div class="main-footer__social-cont">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.linkedin.com/in/arielnunezsalinas/"
-                title="LinkedIn"
-              >
-                <img
-                  class="main-footer__icon"
-                  src="/icons/linkedin-ico.png"
-                  alt="LinkedIn"
-                />
-              </a>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://github.com/Arustico/"
-                title="GitHub"
-              >
-                <img
-                  class="main-footer__icon"
-                  src="/icons/github-ico.svg"
-                  alt="GitHub"
-                />
-              </a>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://drive.google.com/file/d/1ZGW0gBb1jd_G9SdqKTguI2GQ6o1jGc1A/view?usp=sharing"
-                title="Curriculum"
-              >
-                <img
-                  class="main-footer__icon"
-                  src="/icons/cv-ico.svg"
-                  alt="Curriculum"
-                />
-              </a>
-            </div>
-          </div>
 
-          <!-- Información -->
-          <div class="main-footer__row main-footer__row-2">
-            <h4 class="heading heading-sm js-main-name"></h4>
-            <p class="main-footer__short-desc">
-              Ingeniero Físico especializado en Ciencia de Datos
-            </p>
-          </div>
-        </div>
-
-        <!-- Fila inferior -->
-        <div class="main-footer__lower">
-          <p>
-            Trabajo modificado, basado en
-            <a
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://rammaheshwari.com"
-            >Ram Maheshwari</a>
-          </p>
-          <p>© 2025 Ariel Núñez. Todos los derechos reservados.</p>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Fin Sección 6 -->
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
 
     <!-- Scripts -->
     <script type="module" src="/js/main.js"></script>
