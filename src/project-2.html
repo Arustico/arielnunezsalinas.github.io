@@ -38,14 +38,26 @@
         </section>
         <!-- Sección de detalles (acá diagrama y texto) -->
         <section id="project-img-details" class="project-details">
-            <div class="project-details__iframe-wrapper">
+            <div class="project-details__iframe-wrapper" style= "width: 100%;
+                    overflow: hidden;
+                    position: relative;
+                    ">
                 <div class="project-details__iframe-skeleton"></div>
                 <iframe
+                id="plotly-map"
                 width="100%"
                 src="./diagrams/mapa_competitividad.html"
                 frameborder="0"
-                style="border:0"
-                onload="this.previousElementSibling.style.display='none'"
+                style= "width: 900px;
+                        height: 600px;
+                        transform-origin: top left;
+                        border: 0;
+                        "
+                onload="var scale = this.parentElement.offsetWidth / 1200;
+                        this.style.transform = 'scale(' + scale + ')';
+                        this.parentElement.style.height = (700 * scale) + 'px';
+                        this.previousElementSibling.style.display='none';
+                        "
                 allowfullscreen
                 sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
                 </iframe>
@@ -53,11 +65,20 @@
             <div class="project-details__iframe-wrapper">
                 <div class="project-details__iframe-skeleton"></div>
                 <iframe
+                id="plotly-biplot"
                 width="100%"
                 src="./diagrams/HJbiplot_fig_org.html"
                 frameborder="0"
-                style="border:0"
-                onload="this.previousElementSibling.style.display='none'"
+                style=" width: 1200px;
+                        height: 700px;
+                        transform-origin: top left;
+                        border: 0;
+                        "
+                onload=" var scale = this.parentElement.offsetWidth / 1200;
+                        this.style.transform = 'scale(' + scale + ')';
+                        this.parentElement.style.height = (700 * scale) + 'px';
+                        this.previousElementSibling.style.display='none';
+                        "
                 allowfullscreen
                 sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
                 </iframe>
