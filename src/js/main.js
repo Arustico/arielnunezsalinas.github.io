@@ -33,6 +33,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (form) {
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
+            // selección del lenguaje
+            const t = config.translations[localStorage.getItem('lang') || 'es'];
+            // tokens del formulario
             const data = {
                 token:    import.meta.env.VITE_FORM_TOKEN,
                 honeypot: form.honeypot.value,
@@ -45,10 +48,10 @@ document.addEventListener('DOMContentLoaded', async () => {
                     method: 'POST',
                     body: JSON.stringify(data),
                 });
-                alert('¡Mensaje enviado!');
+                alert(t.form_success);
                 form.reset();
             } catch (err) {
-                alert('Error al enviar. Intenta nuevamente.');
+                alert(t.form_error);
             }
         });
     }

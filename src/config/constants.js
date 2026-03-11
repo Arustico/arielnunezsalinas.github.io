@@ -28,6 +28,8 @@ export const es = {
     site_title_project1:  site_title_project1,
     site_title_project2:  site_title_project2,
     site_title_project3:  site_title_project3,
+    form_success: "¡Mensaje enviado!",
+    form_error:   "Error al enviar. Intenta nuevamente.",
 };
 
 // TEXTOS EN INGLÉS
@@ -41,9 +43,11 @@ export const en = {
     site_title_project1:  'ETL-Dashboard | Portfolio A.N.S',
     site_title_project2:  'GCI Indexes | Portfolio A.N.S',
     site_title_project3:  'Project 3 | Portfolio A.N.S',
+    form_success: "Message sent!",
+    form_error:   "Error sending. Please try again.",
 };
 
-
+//-------------------------------------
 // TEXTOS DEL BODY
 export const translations = {
     es: {
@@ -77,12 +81,15 @@ export const translations = {
                         form_name_ph:  "Ingresa tu Nombre",
                             form_email_ph: "Ingresa tu Correo",
                                 form_msg_ph:   "Escribe tu Mensaje",
+                                    // Proyectos
+                                    //---------------------------------------
                                     // Project 1
                                     p1_hero_title:   "Dashboard y automatización ETL con datos de vehículos",
                                     p1_hero_desc:    "Proyecto que tuvo como objetivo diseñar un proceso ETL que involucró datos del 3CV que estaban disponible desde su página, buckets de la plataforma de google cloud (GCP) para back up y servir la data, finalmente con la data limpia, diseñar un dashboard para visualizar los datos.",
                                     p1_summary_title: "Resumen del Proyecto",
                                     p1_summary_p1:   "El objetivo es la creacion de un proceso de extraccion transformacion y carga de datos para ser utilizados con un dashboard que presente algunos analisis entorno a los datos. Los datos corresponden al Centro de Control y Certificación Vehicular 3CV que son pruebas de homologación a vehículos nuevos que entran al mercado chileno. Estos datos han permitido realizar distintos avances legislativos y controles que han derivado en estratégias para descarbonizar, y mejorar la tecnología entrante al país.",
                                     p1_summary_p2:   "Para el flujo, se necesitó de GCP para que alojara la data cruda, y posteriormente alojara y sirviera la data procesada.",
+                                    //---------------------------------------
                                     // Project 2
                                     p2_hero_title:   "Análisis de índices de competitividad globales (GCI)",
                                     p2_hero_desc:    "Proyecto que tuvo como objetivo estudiar los índices de competitividad global (GCI) con el fin de buscar estructuras similares entre países y sus indicadores de pilares.",
@@ -90,6 +97,7 @@ export const translations = {
                                     p2_summary_p1:   "La competitividad es uno de los conceptos más utilizados para evaluar el desempeño relativo de los países en un contexto global caracterizado por mercados interdependientes y rápidos cambios estructurales. El Índice de Competitividad Global (GCI, por sus siglas en inglés), elaborado por el World Economic Forum (WEF), se ha consolidado como una de las principales referencias para esta tarea, al integrar múltiples dimensiones asociadas a instituciones, infraestructura, estabilidad macroeconómica, adopción tecnológica, innovación y capital humano, entre otras (WEF, 2025).",
                                     p2_summary_p2:   "El cálculo se basa en más de 100 indicadores agrupados en 12 pilares de competitividad que se recopilan anualmente. Sin embargo, la comparabilidad temporal del GCI presenta importantes desafíos metodológicos, ya que se han realizado varias modificaciones para el cálculo. Este proyecto tuvo como objetivo analizar la estructura temporal de los 12 pilares que conforman el Índice de Competitividad Global (GCI) para un conjunto de 55 países durante el periodo 2014-2019.",
                                     p2_techniques_title: "Técnicas",
+                                    //---------------------------------------
                                     // Compartidos
                                     tools_title:  "Herramientas Utilizadas",
                                     links_title:  "Links",
