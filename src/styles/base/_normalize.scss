@@ -5,7 +5,8 @@
 
 html {
     line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
+//    text-size-adjust: 100%;
+//    -webkit-text-size-adjust: 100%; // para Safari/Chrome
 }
 
 body {
@@ -67,13 +68,13 @@ button,
     cursor: pointer;
 }
 
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-    border-style: none;
-    padding: 0;
-}
+// button::-moz-focus-inner,
+// [type="button"]::-moz-focus-inner,
+// [type="reset"]::-moz-focus-inner,
+// [type="submit"]::-moz-focus-inner {
+//     border-style: none;
+//     padding: 0;
+// }
 
 input[type="checkbox"],
 input[type="radio"] {

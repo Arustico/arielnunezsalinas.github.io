@@ -19,14 +19,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Botón toggle idioma
     const langBtn = document.getElementById('lang-toggle');
-    if (langBtn) {
-        langBtn.addEventListener('click', () => {
-            const current = localStorage.getItem('lang') || 'es';
-            const next = current === 'es' ? 'en' : 'es';
-            localStorage.setItem('lang', next);
-            applyLanguage(next);
-        });
+    const langBtnMobile = document.getElementById('lang-toggle-mobile');
+
+    function toggleLang() {
+        const current = localStorage.getItem('lang') || 'es';
+        const next = current === 'es' ? 'en' : 'es';
+        localStorage.setItem('lang', next);
+        applyLanguage(next);
     }
+
+    if (langBtn) langBtn.addEventListener('click', toggleLang);
+    if (langBtnMobile) langBtnMobile.addEventListener('click', toggleLang);
 
     // Formulario de contacto
     const form = document.querySelector('.contact__form');
@@ -118,7 +121,11 @@ function applyLanguage(lang) {
 
     // Label del botón toggle
     const langBtn = document.getElementById('lang-toggle');
+    const langBtnMobile = document.getElementById('lang-toggle-mobile')
+    // Actualiza ambos botones
     if (langBtn) langBtn.textContent = lang === 'es' ? 'EN' : 'ES';
+    if (langBtnMobile) langBtnMobile.textContent = lang === 'es' ? 'EN' : 'ES';
+
 }
 
 function applyTranslations(lang) {
