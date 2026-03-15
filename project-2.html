@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,18 +15,18 @@
         />
         <!-- Favicon -->
         <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
-      <script type="module" crossorigin src="/arielnunezsalinas.github.io/assets/main-CAPYgR2_.js"></script>
-      <link rel="stylesheet" crossorigin href="/arielnunezsalinas.github.io/assets/main-DdWU0AGJ.css">
+      <script type="module" crossorigin src="/arielnunezsalinas.github.io/assets/main-C2ASz1nq.js"></script>
+      <link rel="stylesheet" crossorigin href="/arielnunezsalinas.github.io/assets/main-bZdA9d3n.css">
     </head>
 
-    <body data-page="project2">
+     <body data-page="project1">
         <!-- Header -->
         <div id="header-placeholder"></div>
 
         <!-- Contenido específico del proyecto -->
         <!-- Sección presentación -->
         <section class="project-cs-hero">
-            <div class="project-cs-hero__content">
+        <div class="project-cs-hero__content">
             <h1 class="heading-sec__main text-center" data-i18n="p2_hero_title">Análisis de índices de competitividad globales (GCI)</h1>
             <div class="project-cs-hero__info">
                 <p class="text-primary text-left" data-i18n="p2_hero_desc">
@@ -43,50 +43,19 @@
         </section>
         <!-- Sección de detalles (acá diagrama y texto) -->
         <section id="project-img-details" class="project-details">
-            <div class="project-details__iframe-wrapper" style= "width: 100%;
-                    overflow: hidden;
-                    position: relative;
-                    ">
-                <div class="project-details__iframe-skeleton"></div>
-                <iframe
-                id="plotly-map"
-                width="100%"
-                src="./diagrams/mapa_competitividad.html"
-                frameborder="0"
-                style= "width: 900px;
-                        height: 600px;
-                        transform-origin: top left;
-                        border: 0;
-                        "
-                onload="var scale = this.parentElement.offsetWidth / 1200;
-                        this.style.transform = 'scale(' + scale + ')';
-                        this.parentElement.style.height = (700 * scale) + 'px';
-                        this.previousElementSibling.style.display='none';
-                        "
-                allowfullscreen
-                sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
-                </iframe>
-            </div>
-            <div class="project-details__iframe-wrapper">
-                <div class="project-details__iframe-skeleton"></div>
-                <iframe
-                id="plotly-biplot"
-                width="100%"
-                src="./diagrams/HJbiplot_fig_org.html"
-                frameborder="0"
-                style=" width: 1200px;
-                        height: 700px;
-                        transform-origin: top left;
-                        border: 0;
-                        "
-                onload=" var scale = this.parentElement.offsetWidth / 1200;
-                        this.style.transform = 'scale(' + scale + ')';
-                        this.parentElement.style.height = (700 * scale) + 'px';
-                        this.previousElementSibling.style.display='none';
-                        "
-                allowfullscreen
-                sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
-                </iframe>
+            <div class="main-container">
+                <div class="figure-block">
+                    <h2 class="figure-block__title" data-i18n="p2_map_title">
+                        Índice de Competitividad Global (GCI)
+                    </h2>
+                    <div
+                        class="plotly-figure"
+                        id="gci-map"
+                        data-json="figures_json/mapa_competitividad.json"
+                        aria-label="Mapa del Índice de Competitividad Global"
+                        role="img">
+                    </div>
+                </div>
             </div>
         </section>
 
