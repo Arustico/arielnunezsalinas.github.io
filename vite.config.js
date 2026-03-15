@@ -7,6 +7,7 @@ export default defineConfig({
     root: 'src',
     envDir: '../',  // variables .env
     base: '/arielnunezsalinas.github.io/',
+    publicDir: 'public',
     // Copia las partes partciales de html para el deploy
     plugins: [
         viteStaticCopy({

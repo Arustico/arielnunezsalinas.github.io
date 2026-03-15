@@ -69,3 +69,14 @@ $breakpoints: (
         clear: both;
     }
 }
+
+// Puente hacia JS: escribe los breakpoints como CSS custom properties.
+// Se declaran en :root para que sean accesibles globalmente.
+// Usan visibility:hidden para que no afecten el layout.
+:root {
+    @each $name, $value in $breakpoints {
+        --bp-#{$name}: #{$value};
+    }
+}
+
+

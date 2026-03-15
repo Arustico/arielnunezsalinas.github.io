@@ -26,6 +26,8 @@
 //@use 'components/menu' as *;
 @use 'components/mouse-scroll' as *;
 
+@use "components/plotly-figures";
+
 // ===========================
 // PAGES (Por página)
 // ===========================
@@ -35,4 +37,4 @@
 // ===========================
 // UTILITIES (Último)
 // ===========================
-//@use 'abstracts/utilities' as *;
+@use 'abstracts/utilities' as *;

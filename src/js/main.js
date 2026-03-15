@@ -5,7 +5,7 @@ import '../styles/main.scss';
 import * as config from '../config/constants.js';
 import { initMenuHandler } from './menu-handler.js';
 import { loadPartials } from './partials-loader.js'; // carpeta partials
-
+import { initPlotlyFigures } from './plot_loader.js';
 
 // 3. Inicialización
 const base = config.base;
@@ -58,6 +58,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         });
     }
+
+    // figuras de plotly
+    initPlotlyFigures();
 
     // Handlers
     initMenuHandler();

@@ -1,0 +1,144 @@
+// ==========================================
+// PLOTLY FIGURES - Contenedores de gráficos
+// ==========================================
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins";
+
+:root {
+    // Contenedor de figura
+    --figure-radius:        12px;
+    --figure-bg:            #ffffff;
+    --figure-shadow:        0 2px 16px rgba(0, 0, 0, 0.08);
+    --figure-padding:       1.5rem;
+    --figure-padding-sm:    1rem;
+    --figure-margin:        2.5rem 0;
+    --figure-margin-sm:     1.5rem 0;
+
+    // Altura del gráfico
+    --figure-height:        350px;
+    --figure-height-sm:     280px;
+
+    // Skeleton de carga
+    --skeleton-base:        #e8eaed;
+    --skeleton-shine:       #f5f5f5;
+    --skeleton-duration:    1.4s;
+
+    // Estados de error
+    --figure-error-bg:      #fff3f3;
+    --figure-error-border:  #ffcdd2;
+    --figure-error-text:    #b71c1c;
+}
+
+
+// ==========================================
+// BLOQUE CONTENEDOR
+// ==========================================
+
+// Sección que envuelve cada figura (título + gráfico)
+.figure-block {
+    margin: var(--figure-margin);
+    padding: var(--figure-padding);
+    background: var(--figure-bg);
+    border-radius: var(--figure-radius);
+    box-shadow: var(--figure-shadow);
+
+    // Título de la figura
+    &__title {
+        margin: 0 0 1rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #222;
+    }
+}
+
+
+// ==========================================
+// CONTENEDOR DEL GRÁFICO
+// ==========================================
+
+// Div donde Plotly inyecta el SVG/canvas.
+// min-height es obligatorio: un elemento con height:0 nunca intersecta
+// el viewport, lo que impediría que el IntersectionObserver lo detecte.
+.plotly-figure {
+    width: 100%;
+    min-height: var(--figure-height);
+    border-radius: calc(var(--figure-radius) - 4px);
+    overflow: hidden;
+}
+
+
+// ==========================================
+// SKELETON DE CARGA
+// ==========================================
+
+// Animación shimmer: gradiente que se desplaza de derecha a izquierda
+// mientras el JSON se descarga, dando feedback visual al usuario.
+.plotly-skeleton {
+    width: 100%;
+    height: var(--figure-height);
+    border-radius: calc(var(--figure-radius) - 4px);
+    background: linear-gradient(
+        90deg,
+        var(--skeleton-base)  25%,
+        var(--skeleton-shine) 50%,
+        var(--skeleton-base)  75%
+    );
+    background-size: 200% 100%;
+    animation: plotly-shimmer var(--skeleton-duration) infinite;
+}
+
+// Prefijo `plotly-` en el keyframe evita colisiones con otras animaciones
+// llamadas `shimmer` que puedan existir en otros componentes del proyecto.
+@keyframes plotly-shimmer {
+    0%   { background-position:  200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+
+// ==========================================
+// ESTADO DE ERROR
+// ==========================================
+
+// Mensaje visible cuando el fetch del JSON falla.
+// Sigue BEM: bloque `.plotly-error`, elementos `__icon` y `__message`.
+.plotly-error {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--figure-error-bg);
+    border: 1px solid var(--figure-error-border);
+    border-radius: calc(var(--figure-radius) - 4px);
+    color: var(--figure-error-text);
+
+    &__icon {
+        font-size: 1.4rem;
+        flex-shrink: 0;     // evita que el ícono se comprima en pantallas angostas
+    }
+
+    &__message {
+        margin: 0;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+}
+
+
+// ==========================================
+// RESPONSIVO
+// ==========================================
+
+@include mixins.respond(tab-port) {
+    .figure-block {
+        padding: var(--figure-padding-sm);
+        margin: var(--figure-margin-sm);
+    }
+
+    // Altura fija en tablet/móvil para evitar que el contenedor colapse
+    // antes de que Plotly.js termine de inyectar el SVG.
+    .plotly-figure,
+    .plotly-skeleton {
+        min-height: var(--figure-height-sm);
+        height: var(--figure-height-sm);
+    }
+}

@@ -97,6 +97,7 @@ export const translations = {
                                     p2_summary_p1:   "La competitividad es uno de los conceptos más utilizados para evaluar el desempeño relativo de los países en un contexto global caracterizado por mercados interdependientes y rápidos cambios estructurales. El Índice de Competitividad Global (GCI, por sus siglas en inglés), elaborado por el World Economic Forum (WEF), se ha consolidado como una de las principales referencias para esta tarea, al integrar múltiples dimensiones asociadas a instituciones, infraestructura, estabilidad macroeconómica, adopción tecnológica, innovación y capital humano, entre otras (WEF, 2025).",
                                     p2_summary_p2:   "El cálculo se basa en más de 100 indicadores agrupados en 12 pilares de competitividad que se recopilan anualmente. Sin embargo, la comparabilidad temporal del GCI presenta importantes desafíos metodológicos, ya que se han realizado varias modificaciones para el cálculo. Este proyecto tuvo como objetivo analizar la estructura temporal de los 12 pilares que conforman el Índice de Competitividad Global (GCI) para un conjunto de 55 países durante el periodo 2014-2019.",
                                     p2_techniques_title: "Técnicas",
+                                    p2_map_title: "Índice de Competitividad Global (GCI)",
                                     //---------------------------------------
                                     // Compartidos
                                     tools_title:  "Herramientas Utilizadas",
@@ -150,6 +151,7 @@ export const translations = {
                                     p2_summary_p1:   "Competitiveness is one of the most widely used concepts for evaluating the relative performance of countries in a global context characterized by interdependent markets and rapid structural changes. The Global Competitiveness Index (GCI), produced by the World Economic Forum (WEF), has established itself as one of the main references for this task, integrating multiple dimensions related to institutions, infrastructure, macroeconomic stability, technology adoption, innovation, and human capital (WEF, 2025).",
                                     p2_summary_p2:   "The calculation is based on more than 100 indicators grouped into 12 competitiveness pillars collected annually. However, the temporal comparability of the GCI presents significant methodological challenges due to several modifications in its calculation. This project aimed to analyze the temporal structure of the 12 pillars comprising the GCI for a set of 55 countries during the period 2014–2019.",
                                     p2_techniques_title: "Techniques",
+                                    p2_map_title: "Global Competitiveness Index (GCI)",
                                     // Shared
                                     tools_title:  "Tools Used",
                                     links_title:  "Links",
