@@ -12,7 +12,8 @@
 html {
   // This defines what 1rem is
   font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
-  scroll-behavior: smooth;
+  scrollbar-gutter: stable; // reserva el espacio del scrollbar aunque no haya scroll
+  overflow-y: scroll; // scrollbar siempre visible, nunca aparece/desaparece
 
   @include mixins.respond(tab-land) {
     // width < 1200?
