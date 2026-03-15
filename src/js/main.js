@@ -83,7 +83,9 @@ function applyLanguage(lang) {
 
     // Nombre usuario
     document.querySelectorAll('.js-user-name').forEach(el => {
-        el.textContent = t.main_name;
+        if (el.textContent !== t.main_name) { //solo cambia si realmente cambió
+            el.textContent = t.main_name;
+        }
     });
 
     // Navegación

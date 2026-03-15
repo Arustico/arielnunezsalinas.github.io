@@ -56,6 +56,8 @@
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 1px;
+    min-width: 16rem;      // ancho fijo modificar según el largo del nombre
+    display: inline-block; // necesario para que min-width funcione en span
   }
   &__links {
     display: flex;

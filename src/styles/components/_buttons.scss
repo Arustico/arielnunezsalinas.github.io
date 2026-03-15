@@ -287,10 +287,16 @@
     font-size: 1.4rem;
     margin-left: 2rem;
     color: inherit;
+    width: 4.5rem;
+    text-align:center;
+    box-sizing: border-box;
 }
 
 .btn-header__lang--mobile {
     display: none;
+    width: 4.5rem;          // ← ancho fijo
+    text-align: center;
+    box-sizing: border-box;
 }
 
 @include mixins.respond(phone) {

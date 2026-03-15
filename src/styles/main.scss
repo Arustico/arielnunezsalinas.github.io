@@ -38,3 +38,11 @@
 // UTILITIES (Último)
 // ===========================
 @use 'abstracts/utilities' as *;
+
+
+
+// DEBUG TEMPORAL
+body[data-page="project2"],
+body[data-page="project1"] {
+    overflow-y: scroll;
+}
