@@ -1,0 +1,128 @@
+[
+  {
+    "objectID": "statis.html",
+    "href": "statis.html",
+    "title": "Análisis STATIS",
+    "section": "",
+    "text": "STATIS (Structuration de Tableaux À Trois Indices de Statistique) es el método más potente del análisis para responder la pregunta central: ¿son coherentes entre sí las tablas anuales del GCI?\n\n\n\nlibrary(readxl)\nlibrary(ade4)\nlibrary(FactoMineR)\nlibrary(ggplot2)\n\nreadRenviron(\"../.env\")\nFOLDER_PRJ       &lt;- Sys.getenv(\"FOLDER_PRJCT\")\nFOLDER_PROCESSED &lt;- Sys.getenv(\"FOLDER_PROCESSED\")\nsetwd(FOLDER_PRJ)\n\n\n\n\n\n# ── Lectura del archivo pivotado ──────────────────────────────────────────\nfilename &lt;- file.path(FOLDER_PROCESSED, \"data_pivoted_2.csv\")\ndatos    &lt;- read.csv(filename)\ndatos    &lt;- as.data.frame(datos)\n\n# Cada fila es una combinación Pilar-Año (ej. \"3-2017\")\nrownames(datos) &lt;- datos$PILAR\ndatos$PILAR     &lt;- NULL\n\n# Solo columnas numéricas (países)\ndatos &lt;- datos[, sapply(datos, is.numeric)]\n\n# Eliminar columnas y filas completamente vacías\ndatos &lt;- datos[, colSums(is.na(datos))  &lt; nrow(datos)]\ndatos &lt;- datos[rowSums(is.na(datos))    &lt; ncol(datos), ]\n\n# Imputación por media de columna\nfor (j in seq_len(ncol(datos))) {\n  idx_na &lt;- is.na(datos[, j])\n  if (any(idx_na)) datos[idx_na, j] &lt;- mean(datos[, j], na.rm = TRUE)\n}\n\n# Eliminar columnas de varianza cero\ndatos &lt;- datos[, apply(datos, 2, sd) &gt; 0]\n\n# Metadatos de filas\nnombres_filas &lt;- rownames(datos)\npilar &lt;- sub(\"-.*\", \"\", nombres_filas)\nanio  &lt;- sub(\".*-\", \"\", nombres_filas)\n\ncat(\"✔ Datos preparados:\", nrow(datos), \"filas ×\", ncol(datos), \"columnas\\n\")\n\n\n\n\n\n# K-tabla: cada bloque = un país (columna del data.frame)\ntablas_por_pais &lt;- lapply(colnames(datos), function(pais) {\n  data.frame(valor = datos[[pais]], row.names = rownames(datos))\n})\nnames(tablas_por_pais) &lt;- colnames(datos)\n\nktab_paises &lt;- ktab.list.df(\n  obj      = tablas_por_pais,\n  tabnames = names(tablas_por_pais),\n  rownames = rownames(datos),\n)\n\n# ── Aplicación de STATIS ──────────────────────────────────────────────────\n#   scannf = FALSE → no pedir número de ejes interactivamente\n#   nf = 2         → retener 2 factores principales\nres.statis &lt;- statis(ktab_paises, scannf = FALSE, nf = 2)\n\ncat(\"✔ STATIS calculado\\n\")\ncat(\"\\nCoeficiente RV (primeras 5×5):\\n\")\nprint(round(res.statis$RV[1:5, 1:5], 3))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nChile en el mapa RV: Chile aparece en una zona intermedia, agrupado con países como España y Portugal — economías con mercados de tamaño mediano y un nivel de desarrollo institucional moderadamente alto. Su posición relativa confirma el puesto 33° en el GCI 2019."
+  },
+  {
+    "objectID": "statis.html#implementación-en-r",
+    "href": "statis.html#implementación-en-r",
+    "title": "Análisis STATIS",
+    "section": "",
+    "text": "library(readxl)\nlibrary(ade4)\nlibrary(FactoMineR)\nlibrary(ggplot2)\n\nreadRenviron(\"../.env\")\nFOLDER_PRJ       &lt;- Sys.getenv(\"FOLDER_PRJCT\")\nFOLDER_PROCESSED &lt;- Sys.getenv(\"FOLDER_PROCESSED\")\nsetwd(FOLDER_PRJ)"
+  },
+  {
+    "objectID": "statis.html#lectura-y-preparación-de-la-k-tabla",
+    "href": "statis.html#lectura-y-preparación-de-la-k-tabla",
+    "title": "Análisis STATIS",
+    "section": "",
+    "text": "# ── Lectura del archivo pivotado ──────────────────────────────────────────\nfilename &lt;- file.path(FOLDER_PROCESSED, \"data_pivoted_2.csv\")\ndatos    &lt;- read.csv(filename)\ndatos    &lt;- as.data.frame(datos)\n\n# Cada fila es una combinación Pilar-Año (ej. \"3-2017\")\nrownames(datos) &lt;- datos$PILAR\ndatos$PILAR     &lt;- NULL\n\n# Solo columnas numéricas (países)\ndatos &lt;- datos[, sapply(datos, is.numeric)]\n\n# Eliminar columnas y filas completamente vacías\ndatos &lt;- datos[, colSums(is.na(datos))  &lt; nrow(datos)]\ndatos &lt;- datos[rowSums(is.na(datos))    &lt; ncol(datos), ]\n\n# Imputación por media de columna\nfor (j in seq_len(ncol(datos))) {\n  idx_na &lt;- is.na(datos[, j])\n  if (any(idx_na)) datos[idx_na, j] &lt;- mean(datos[, j], na.rm = TRUE)\n}\n\n# Eliminar columnas de varianza cero\ndatos &lt;- datos[, apply(datos, 2, sd) &gt; 0]\n\n# Metadatos de filas\nnombres_filas &lt;- rownames(datos)\npilar &lt;- sub(\"-.*\", \"\", nombres_filas)\nanio  &lt;- sub(\".*-\", \"\", nombres_filas)\n\ncat(\"✔ Datos preparados:\", nrow(datos), \"filas ×\", ncol(datos), \"columnas\\n\")"
+  },
+  {
+    "objectID": "statis.html#construcción-de-la-k-tabla-y-aplicación-de-statis",
+    "href": "statis.html#construcción-de-la-k-tabla-y-aplicación-de-statis",
+    "title": "Análisis STATIS",
+    "section": "",
+    "text": "# K-tabla: cada bloque = un país (columna del data.frame)\ntablas_por_pais &lt;- lapply(colnames(datos), function(pais) {\n  data.frame(valor = datos[[pais]], row.names = rownames(datos))\n})\nnames(tablas_por_pais) &lt;- colnames(datos)\n\nktab_paises &lt;- ktab.list.df(\n  obj      = tablas_por_pais,\n  tabnames = names(tablas_por_pais),\n  rownames = rownames(datos),\n)\n\n# ── Aplicación de STATIS ──────────────────────────────────────────────────\n#   scannf = FALSE → no pedir número de ejes interactivamente\n#   nf = 2         → retener 2 factores principales\nres.statis &lt;- statis(ktab_paises, scannf = FALSE, nf = 2)\n\ncat(\"✔ STATIS calculado\\n\")\ncat(\"\\nCoeficiente RV (primeras 5×5):\\n\")\nprint(round(res.statis$RV[1:5, 1:5], 3))"
+  },
+  {
+    "objectID": "statis.html#compromiso-y-trayectorias-de-pilares",
+    "href": "statis.html#compromiso-y-trayectorias-de-pilares",
+    "title": "Análisis STATIS",
+    "section": "",
+    "text": "Chile en el mapa RV: Chile aparece en una zona intermedia, agrupado con países como España y Portugal — economías con mercados de tamaño mediano y un nivel de desarrollo institucional moderadamente alto. Su posición relativa confirma el puesto 33° en el GCI 2019."
+  },
+  {
+    "objectID": "eda.html",
+    "href": "eda.html",
+    "title": "Análisis Exploratorio de Datos (EDA)",
+    "section": "",
+    "text": "✔ Entorno configurado correctamente\n  · Proyecto  : /home/ariel/Escritorio/Proyectos Profesionales/1. Presentacion/2. Proyectos Portafolios/2. Análisis de Indices GCI\n  · Datos     : /home/ariel/Escritorio/Proyectos Profesionales/1. Presentacion/2. Proyectos Portafolios/2. Análisis de Indices GCI/data/processed\n  · Figuras   : /home/ariel/Escritorio/Proyectos Profesionales/1. Presentacion/2. Proyectos Portafolios/2. Análisis de Indices GCI/doc/figures"
+  },
+  {
+    "objectID": "eda.html#librerías-y-parámetros-globales",
+    "href": "eda.html#librerías-y-parámetros-globales",
+    "title": "Análisis Exploratorio de Datos (EDA)",
+    "section": "",
+    "text": "✔ Entorno configurado correctamente\n  · Proyecto  : /home/ariel/Escritorio/Proyectos Profesionales/1. Presentacion/2. Proyectos Portafolios/2. Análisis de Indices GCI\n  · Datos     : /home/ariel/Escritorio/Proyectos Profesionales/1. Presentacion/2. Proyectos Portafolios/2. Análisis de Indices GCI/data/processed\n  · Figuras   : /home/ariel/Escritorio/Proyectos Profesionales/1. Presentacion/2. Proyectos Portafolios/2. Análisis de Indices GCI/doc/figures"
+  },
+  {
+    "objectID": "eda.html#indicadores-a-lo-largo-del-período",
+    "href": "eda.html#indicadores-a-lo-largo-del-período",
+    "title": "Análisis Exploratorio de Datos (EDA)",
+    "section": "3.1 Indicadores a lo largo del período",
+    "text": "3.1 Indicadores a lo largo del período\nUna primera señal de los cambios metodológicos aparece al examinar cuántos indicadores permanecieron presentes a lo largo de todos los años de estudio.\n\n\n                            \n                                            \n\n\n\n  Solo 5 indicadores estuvieron presentes en los 6 años de estudio —\n  evidencia directa de la alta rotación de indicadores entre metodologías."
+  },
+  {
+    "objectID": "eda.html#resumen-de-cobertura-por-año",
+    "href": "eda.html#resumen-de-cobertura-por-año",
+    "title": "Análisis Exploratorio de Datos (EDA)",
+    "section": "3.2 Resumen de cobertura por año",
+    "text": "3.2 Resumen de cobertura por año\n\n\n                            \n                                            \n\n\n\nCambio estructural en 2018: el número de indicadores cae de 109 a 92 — una reducción del 16 % en un solo año. Esto, combinado con el cambio de escala (1–7 → 0–100), implica que los puntajes de 2018 y 2019 no son directamente comparables con los años anteriores sin un ajuste explícito."
+  },
+  {
+    "objectID": "eda.html#valores-faltantes-por-país",
+    "href": "eda.html#valores-faltantes-por-país",
+    "title": "Análisis Exploratorio de Datos (EDA)",
+    "section": "3.3 Valores faltantes por país",
+    "text": "3.3 Valores faltantes por país\n\n\n                            \n                                            \n\n\n\n  Solo Líbano y Emiratos Árabes Unidos superan levemente el 4 % de datos\n  faltantes; el resto de los países están bien cubiertos."
+  },
+  {
+    "objectID": "eda.html#distribución-de-indicadores-por-pilar-y-año",
+    "href": "eda.html#distribución-de-indicadores-por-pilar-y-año",
+    "title": "Análisis Exploratorio de Datos (EDA)",
+    "section": "3.4 Distribución de indicadores por pilar y año",
+    "text": "3.4 Distribución de indicadores por pilar y año\nEl siguiente gráfico revela cómo la redistribución de 2018 modificó el peso relativo de cada pilar dentro del índice.\n\n\n                            \n                                            \n\n\n\n  La caída en el total de indicadores en 2018 es visible: el pilar 1 (Instituciones)\n  aumenta su peso relativo mientras que otros pilares se contraen, reflejando\n  la recomposición conceptual del GCI 4.0."
+  },
+  {
+    "objectID": "eda.html#mapa-mundial-animado-del-gci",
+    "href": "eda.html#mapa-mundial-animado-del-gci",
+    "title": "Análisis Exploratorio de Datos (EDA)",
+    "section": "5.1 Mapa mundial animado del GCI",
+    "text": "5.1 Mapa mundial animado del GCI\n\n\n                            \n                                            \n\n\n\n  Usa el slider o el botón ▶ para explorar la evolución del GCI entre 2014 y 2019.\n  El salto visual en 2018 es en parte un artefacto del cambio metodológico."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Coherencia, Estabilidad y Discontinuidades del Índice de Competitividad Global",
+    "section": "",
+    "text": "El Índice de Competitividad Global del WEF cambió su metodología en 2018 — de una lógica por etapas de desarrollo a una de agregaciones sucesivas. Este portafolio explora si ese cambio rompe la comparabilidad temporal usando técnicas multivariantes: agrupamiento jerárquico, HJ‑Biplot y STATIS."
+  },
+  {
+    "objectID": "index.html#las-dos-metodologías-del-gci",
+    "href": "index.html#las-dos-metodologías-del-gci",
+    "title": "Coherencia, Estabilidad y Discontinuidades del Índice de Competitividad Global",
+    "section": "1.1 Las dos metodologías del GCI",
+    "text": "1.1 Las dos metodologías del GCI\n\n\n\n\nDimensión\n\n\nGCI 3.0 2005–2017\n\n\nGCI 4.0 2018–presente\n\n\n\n\n\n\nEscala de indicadores\n\n\n1 a 7\n\n\n0 a 100\n\n\n\n\nPonderación de pilares\n\n\nVariable según etapa de desarrollo del país\n\n\nPeso igual (8.3 %) para los 12 pilares\n\n\n\n\nN° de indicadores (aprox.)\n\n\n109\n\n\n92 (2018) / 98 (2019)\n\n\n\n\nPilar de TIC\n\n\nPilar 9: Preparación Tecnológica\n\n\nPilar 3: Adopción de TIC (reubicado)\n\n\n\n\nÉnfasis conceptual\n\n\nFactores de producción / eficiencia\n\n\n4ª Revolución Industrial / digitalización\n\n\n\n\n\n¿Por qué importa esto? Cuando la metodología de medición cambia de forma sustancial, los valores resultantes pueden reflejar tanto cambios reales en competitividad como artefactos del rediseño metodológico. Distinguirlos requiere herramientas estadísticas específicas."
+  },
+  {
+    "objectID": "biplot.html#agrupamiento-por-año",
+    "href": "biplot.html#agrupamiento-por-año",
+    "title": "Agrupamiento y Biplot",
+    "section": "1.1 Agrupamiento por año",
+    "text": "1.1 Agrupamiento por año\n\n\n\n\n\n\n\n\n\n\nResultado clave: el dendrograma separa claramente dos grupos — 2014–2017 vs. 2018–2019. Con un coeficiente Cophenético de ~0.98, este agrupamiento captura fielmente la geometría real de los datos. La brecha entre ambos grupos es la “huella” del cambio metodológico."
+  },
+  {
+    "objectID": "biplot.html#agrupamiento-por-organización",
+    "href": "biplot.html#agrupamiento-por-organización",
+    "title": "Agrupamiento y Biplot",
+    "section": "1.2 Agrupamiento por organización",
+    "text": "1.2 Agrupamiento por organización"
+  },
+  {
+    "objectID": "biplot.html#agrupamiento-por-bloque-regional",
+    "href": "biplot.html#agrupamiento-por-bloque-regional",
+    "title": "Agrupamiento y Biplot",
+    "section": "1.3 Agrupamiento por bloque regional",
+    "text": "1.3 Agrupamiento por bloque regional"
+  },
+  {
+    "objectID": "biplot.html#agrupamiento-por-país-con-mapa-de-calor",
+    "href": "biplot.html#agrupamiento-por-país-con-mapa-de-calor",
+    "title": "Agrupamiento y Biplot",
+    "section": "1.4 Agrupamiento por país (con mapa de calor)",
+    "text": "1.4 Agrupamiento por país (con mapa de calor)\n\n\nCoeficiente Cophenético: 0.76"
+  }
+]
