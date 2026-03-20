@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ariel Núñez Salinas">
+<meta name="dcterms.date" content="2025-01-01">
+
+<title>Coherencia, Estabilidad y Discontinuidades del Índice de Competitividad Global – Coherencia y Discontinuidades del GCI: 2014 - 2019</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-8b4baf804e461d9b72633f0de59a0cac.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-60d4398d82fec002ccec76571ed06d15.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Coherencia y Discontinuidades del GCI: 2014 - 2019</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Resumen</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./eda.html"> 
+<span class="menu-text">Análisis EDA</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./biplot.html"> 
+<span class="menu-text">Agrupamiento y Biplot</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./statis.html"> 
+<span class="menu-text">STATIS</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Arustico/GCI-Data-Analisis"> <i class="bi bi-github" role="img" aria-label="Repositorio GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contenidos</h2>
+   
+  <ul>
+  <li><a href="#contexto-y-motivación" id="toc-contexto-y-motivación" class="nav-link active" data-scroll-target="#contexto-y-motivación"><span class="header-section-number">1</span> Contexto y Motivación</a>
+  <ul class="collapse">
+  <li><a href="#las-dos-metodologías-del-gci" id="toc-las-dos-metodologías-del-gci" class="nav-link" data-scroll-target="#las-dos-metodologías-del-gci"><span class="header-section-number">1.1</span> Las dos metodologías del GCI</a></li>
+  </ul></li>
+  <li><a href="#discusión-síntesis-de-hallazgos" id="toc-discusión-síntesis-de-hallazgos" class="nav-link" data-scroll-target="#discusión-síntesis-de-hallazgos"><span class="header-section-number">2</span> Discusión: Síntesis de Hallazgos</a></li>
+  <li><a href="#conclusiones" id="toc-conclusiones" class="nav-link" data-scroll-target="#conclusiones"><span class="header-section-number">3</span> Conclusiones</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">4</span> Referencias</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Coherencia, Estabilidad y Discontinuidades del Índice de Competitividad Global</h1>
+<p class="subtitle lead">Un Estudio Multivariante para el Período 2014–2019 · World Economic Forum</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ariel Núñez Salinas </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 1, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="hero-banner">
+<h2 class="anchored">
+🌐 ¿Mide lo mismo el GCI cada año?
+</h2>
+<p>
+El Índice de Competitividad Global del WEF cambió su metodología en 2018 — de una lógica por <em>etapas de desarrollo</em> a una de <em>agregaciones sucesivas</em>. Este portafolio explora si ese cambio rompe la comparabilidad temporal usando técnicas multivariantes: agrupamiento jerárquico, HJ‑Biplot y STATIS.
+</p>
+</div>
+<section id="contexto-y-motivación" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Contexto y Motivación</h1>
+<p>El <strong>Índice de Competitividad Global (GCI)</strong> del World Economic Forum (WEF) sintetiza más de 100 indicadores agrupados en 12 pilares para medir la capacidad de los países de lograr un crecimiento económico sostenido. Es una referencia global para gobiernos, organismos internacionales e investigadores.</p>
+<p>Sin embargo, en 2018 el WEF introdujo una <strong>revisión metodológica profunda</strong> (GCI 4.0) que modificó normalizaciones, redefinió algunos pilares y cambió la forma de agregar los indicadores. Surge entonces la pregunta:</p>
+<blockquote class="blockquote">
+<p><em>¿Siguen siendo comparables los puntajes del GCI entre el período pre-2018 y post-2018?</em></p>
+</blockquote>
+<p>Este análisis aborda esa pregunta para un conjunto de <strong>55 países</strong> durante el período 2014–2019, combinando herramientas de análisis multivariante que van más allá del ranking anual publicado por el WEF.</p>
+<section id="las-dos-metodologías-del-gci" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="las-dos-metodologías-del-gci"><span class="header-section-number">1.1</span> Las dos metodologías del GCI</h2>
+<table class="method-table">
+<thead>
+<tr>
+<th>
+Dimensión
+</th>
+<th>
+<span class="method-badge">GCI 3.0</span> 2005–2017
+</th>
+<th>
+<span class="method-badge v2">GCI 4.0</span> 2018–presente
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Escala de indicadores
+</td>
+<td>
+1 a 7
+</td>
+<td class="highlight">
+0 a 100
+</td>
+</tr>
+<tr>
+<td>
+Ponderación de pilares
+</td>
+<td>
+Variable según etapa de desarrollo del país
+</td>
+<td class="highlight">
+Peso igual (8.3 %) para los 12 pilares
+</td>
+</tr>
+<tr>
+<td>
+N° de indicadores (aprox.)
+</td>
+<td>
+109
+</td>
+<td class="highlight">
+92 (2018) / 98 (2019)
+</td>
+</tr>
+<tr>
+<td>
+Pilar de TIC
+</td>
+<td>
+Pilar 9: Preparación Tecnológica
+</td>
+<td class="highlight">
+Pilar 3: Adopción de TIC (reubicado)
+</td>
+</tr>
+<tr>
+<td>
+Énfasis conceptual
+</td>
+<td>
+Factores de producción / eficiencia
+</td>
+<td class="highlight">
+4ª Revolución Industrial / digitalización
+</td>
+</tr>
+</tbody>
+</table>
+<div class="insight-box">
+<p><strong>¿Por qué importa esto?</strong> Cuando la metodología de medición cambia de forma sustancial, los valores resultantes pueden reflejar tanto <em>cambios reales en competitividad</em> como <em>artefactos del rediseño metodológico</em>. Distinguirlos requiere herramientas estadísticas específicas.</p>
+</div>
+</section>
+</section>
+<section id="discusión-síntesis-de-hallazgos" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Discusión: Síntesis de Hallazgos</h1>
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-value">5</div>
+    <div class="kpi-label">indicadores presentes en los 6 años de estudio</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-value">2</div>
+    <div class="kpi-label">grupos temporales detectados por agrupamiento jerárquico</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-value">0.98</div>
+    <div class="kpi-label">coeficiente Cophenético (agrupamiento por año) — calidad excelente</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-value">64 %</div>
+    <div class="kpi-label">varianza explicada por el primer componente del HJ-Biplot</div>
+  </div>
+</div>
+<p>Los análisis convergen en cinco conclusiones principales:</p>
+<p><strong>1. Estabilidad dentro del período GCI 3.0 (2014–2017).</strong> La interestructura de STATIS muestra vectores muy próximos para estos años, con pesos tipológicos similares. El índice fue coherente y comparable dentro de esta ventana temporal.</p>
+<p><strong>2. Ruptura metodológica confirmada en 2018–2019.</strong> Todos los métodos (agrupamiento jerárquico, HJ-Biplot y STATIS) identifican de forma independiente y consistente la discontinuidad estructural en 2018. Esta discontinuidad no refleja cambios económicos reales, sino la transición al GCI 4.0.</p>
+<p><strong>3. Pilares sensibles al rediseño.</strong> Los pilares 3 (Entorno Macro → Adopción de TIC) y 10 (Tamaño del Mercado) muestran las trayectorias más inestables. Los pilares 1 (Instituciones) y 12 (Innovación) exhiben mayor coherencia estructural entre metodologías.</p>
+<p><strong>4. Heterogeneidad estructural persistente.</strong> Independientemente del año analizado, las economías de la OCDE forman un núcleo compacto y estable, mientras que los países BRICS y otros mercados emergentes presentan mayor dispersión, reflejando trayectorias de desarrollo más heterogéneas.</p>
+<p><strong>5. Implicación metodológica.</strong> Cualquier análisis longitudinal del GCI que abarque el período 2014–2019 debe tratar 2014–2017 y 2018–2019 como dos series separadas o aplicar un ajuste explícito antes de comparar valores entre períodos.</p>
+<hr>
+</section>
+<section id="conclusiones" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Conclusiones</h1>
+<p>El uso combinado de <strong>agrupamiento jerárquico</strong>, <strong>HJ-Biplot</strong> y <strong>STATIS</strong> demostró ser más informativo que el análisis univariado del ranking anual del WEF. Estas técnicas permiten:</p>
+<ul>
+<li>Detectar y <strong>cuantificar</strong> la magnitud de discontinuidades metodológicas.</li>
+<li>Identificar qué <strong>dimensiones</strong> (pilares) son más sensibles a los cambios.</li>
+<li>Caracterizar la <strong>posición relativa</strong> de los países en un espacio multivariante compartido.</li>
+<li>Evaluar la <strong>coherencia interna</strong> del índice a lo largo del tiempo.</li>
+</ul>
+<p>La evidencia es clara: el GCI es un instrumento valioso, pero su uso en análisis longitudinales requiere una conciencia explícita de los cambios metodológicos que lo rediseñaron en 2018. El análisis multivariante no reemplaza al ranking del WEF — lo complementa con una capa de comprensión estructural que el número único no puede ofrecer.</p>
+<hr>
+<div class="hero-banner" style="margin-top:2rem;">
+  <h2 class="anchored" data-anchor-id="conclusiones">📁 Código fuente y datos</h2>
+  <p>
+    Todo el código de extracción, transformación y análisis está disponible en
+    <a href="https://github.com/Arustico/GCI-Data-Analisis" style="color:#4CAF82; font-weight:600;">
+      github.com/Arustico/GCI-Data-Analisis
+    </a>.
+    Los archivos de datos procesados y los informes PDF del WEF se documentan
+    en el README del repositorio.
+  </p>
+</div>
+</section>
+<section id="referencias" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Referencias</h1>
+<ul>
+<li>Farris, J. S. (1969). On the Cophenetic Correlation Coefficient. <em>Systematic Zoology</em>, 18, 279. <a href="https://doi.org/10.2307/2412324">DOI</a></li>
+<li>Ferreira, E., Macedo, P., Fernandes, E., &amp; Coelho, M.C. (2023). A combined framework of Biplots and Machine Learning for real-world driving volatility. <em>Sustainable Cities and Society</em>, 99, 104945. <a href="https://doi.org/10.1016/j.scs.2023.104945">DOI</a></li>
+<li>Galindo Villardón, M.P. (1986). Una alternativa de representación simultánea: HJ-Biplot. <em>Questiio</em>, 10, 13–23.</li>
+<li>Olczyk, M., Kuc-Czarnecka, M., &amp; Saltelli, A. (2022). Changes in the GCI 4.0 Methodology. <em>Journal of Competitiveness</em>, 14, 118–135. <a href="https://doi.org/10.7441/joc.2022.01.07">DOI</a></li>
+<li>Raschka, S., &amp; Mirjalili, V. (2017). <em>Python Machine Learning</em>. Packt Publishing.</li>
+<li>Toledo-San-Martín, Á., Ruff, C., &amp; Vicente-Galindo, P. (2025). A multivariate framework for measuring international mobility in tertiary education. <em>Neutrosophic Sets and Systems</em>, 89, 333–356.</li>
+<li>Torres-Cubilla, C. (2020). <em>PyBiplots</em>. GitHub. <a href="https://github.com/carlostorrescubila/PyBiplots">Repositorio</a></li>
+<li>WEF (2015–2019). <em>The Global Competitiveness Report</em> (ediciones 2014-15 a 2019). World Economic Forum. <a href="https://www.weforum.org/gcr">www.weforum.org/gcr</a></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/arustico\.github\.io\/arielnunezsalinas\.github\.io\/gci");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

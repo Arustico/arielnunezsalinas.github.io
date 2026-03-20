@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Agrupamiento y Biplot – Coherencia y Discontinuidades del GCI: 2014 - 2019</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-8b4baf804e461d9b72633f0de59a0cac.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-60d4398d82fec002ccec76571ed06d15.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script>
+window.PlotlyConfig = {MathJaxConfig: 'local'};
+if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+</script>
+<script type="module">import "https://cdn.plot.ly/plotly-3.4.0.min"</script>
+
+
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Coherencia y Discontinuidades del GCI: 2014 - 2019</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Resumen</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./eda.html"> 
+<span class="menu-text">Análisis EDA</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./biplot.html" aria-current="page"> 
+<span class="menu-text">Agrupamiento y Biplot</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./statis.html"> 
+<span class="menu-text">STATIS</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Arustico/GCI-Data-Analisis"> <i class="bi bi-github" role="img" aria-label="Repositorio GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contenidos</h2>
+   
+  <ul>
+  <li><a href="#agrupamiento-jerárquico" id="toc-agrupamiento-jerárquico" class="nav-link active" data-scroll-target="#agrupamiento-jerárquico"><span class="header-section-number">1</span> Agrupamiento Jerárquico</a>
+  <ul class="collapse">
+  <li><a href="#agrupamiento-por-año" id="toc-agrupamiento-por-año" class="nav-link" data-scroll-target="#agrupamiento-por-año"><span class="header-section-number">1.1</span> Agrupamiento por año</a></li>
+  <li><a href="#agrupamiento-por-organización" id="toc-agrupamiento-por-organización" class="nav-link" data-scroll-target="#agrupamiento-por-organización"><span class="header-section-number">1.2</span> Agrupamiento por organización</a></li>
+  <li><a href="#agrupamiento-por-bloque-regional" id="toc-agrupamiento-por-bloque-regional" class="nav-link" data-scroll-target="#agrupamiento-por-bloque-regional"><span class="header-section-number">1.3</span> Agrupamiento por bloque regional</a></li>
+  <li><a href="#agrupamiento-por-país-con-mapa-de-calor" id="toc-agrupamiento-por-país-con-mapa-de-calor" class="nav-link" data-scroll-target="#agrupamiento-por-país-con-mapa-de-calor"><span class="header-section-number">1.4</span> Agrupamiento por país (con mapa de calor)</a></li>
+  </ul></li>
+  <li><a href="#hj-biplot" id="toc-hj-biplot" class="nav-link" data-scroll-target="#hj-biplot"><span class="header-section-number">2</span> HJ-Biplot</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Agrupamiento y Biplot</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- Lectura de los datos: NO SE MUESTRA -->
+<!-- Lectura de los datos # NO SE MUESTRA -->
+<hr>
+<section id="agrupamiento-jerárquico" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Agrupamiento Jerárquico</h1>
+<p>El agrupamiento jerárquico construye una jerarquía de similitudes entre objetos basándose en la matriz de distancias euclidianas entre sus perfiles de puntajes. Aquí lo aplicamos agrupando <strong>años</strong>, <strong>organizaciones</strong>, <strong>bloques regionales</strong> y <strong>países</strong>, tomando como variables los 12 pilares.</p>
+<section id="agrupamiento-por-año" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="agrupamiento-por-año"><span class="header-section-number">1.1</span> Agrupamiento por año</h2>
+<div id="0f8e039c" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="biplot_files/figure-html/cell-5-output-1.png" width="943" height="367" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="insight-box">
+<p><strong>Resultado clave:</strong> el dendrograma separa claramente dos grupos — <em>2014–2017</em> vs.&nbsp;<em>2018–2019</em>. Con un coeficiente Cophenético de ~0.98, este agrupamiento captura fielmente la geometría real de los datos. La brecha entre ambos grupos es la “huella” del cambio metodológico.</p>
+</div>
+</section>
+<section id="agrupamiento-por-organización" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="agrupamiento-por-organización"><span class="header-section-number">1.2</span> Agrupamiento por organización</h2>
+<div id="bceaebb5" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="biplot_files/figure-html/cell-6-output-1.png" width="942" height="319" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="agrupamiento-por-bloque-regional" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="agrupamiento-por-bloque-regional"><span class="header-section-number">1.3</span> Agrupamiento por bloque regional</h2>
+<div id="b348586d" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="biplot_files/figure-html/cell-7-output-1.png" width="942" height="415" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="agrupamiento-por-país-con-mapa-de-calor" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="agrupamiento-por-país-con-mapa-de-calor"><span class="header-section-number">1.4</span> Agrupamiento por país (con mapa de calor)</h2>
+<div id="d4e51fcf" class="cell" height="10" width="8" data-execution_count="7">
+<div class="cell-output cell-output-stdout">
+<pre><code>Coeficiente Cophenético: 0.76</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="biplot_files/figure-html/cell-8-output-2.png" width="971" height="587" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="48688a46" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.4.0.min.js" integrity="sha256-KEmPoupLpFyGMyGAiOsiNDbKDKAvxXAn/W+oQa0ZAfk=" crossorigin="anonymous"></script>                <div id="20c94ab4-9953-493c-9f07-77bb0b61ac55" class="plotly-graph-div" style="height:220px; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("20c94ab4-9953-493c-9f07-77bb0b61ac55")) {                    Plotly.newPlot(                        "20c94ab4-9953-493c-9f07-77bb0b61ac55",                        [{"cells":{"align":"center","fill":{"color":[["#fff3cd","#d4edda","#d4edda","#fff3cd"],["#fff3cd","#d4edda","#d4edda","#fff3cd"],["#fff3cd","#d4edda","#d4edda","#fff3cd"]]},"font":{"size":11},"height":30,"values":[["BLOCK","ORG","A\u00d1O","PA\u00cdS"],[0.7707,0.9177,0.9336,0.7619],["Buena (0.75\u20130.9)","Excelente (\u003e 0.9)","Excelente (\u003e 0.9)","Buena (0.75\u20130.9)"]]},"header":{"align":"center","fill":{"color":"#2C6E8A"},"font":{"color":"white","size":12},"values":["\u003cb\u003e\u00cdndice\u003c\u002fb\u003e","\u003cb\u003eCoef. Cophen\u00e9tico\u003c\u002fb\u003e","\u003cb\u003eInterpretaci\u00f3n\u003c\u002fb\u003e"]},"type":"table"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"margin":{"l":0,"r":0,"t":40,"b":0},"title":{"text":"Calidad de los agrupamientos jer\u00e1rquicos"},"height":220},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('20c94ab4-9953-493c-9f07-77bb0b61ac55');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="hj-biplot" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> HJ-Biplot</h1>
+<p>El HJ-Biplot proyecta simultáneamente países (puntos) y pilares-año (vectores) en el plano de máxima variabilidad, ofreciendo una representación de igual calidad para ambos. Los países son los <strong>individuos</strong> y las combinaciones Pilar-Año las <strong>variables</strong>.</p>
+<div id="d299899c" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-stdout">
+<pre><code>Varianza explicada:
+  · Eje 1: 63.80 %
+  · Eje 2: 7.30 %
+  · Eje 3: 6.05 %
+  · Eje 4: 3.88 %</code></pre>
+</div>
+</div>
+<div id="e9fcfc7d" class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.4.0.min.js" integrity="sha256-KEmPoupLpFyGMyGAiOsiNDbKDKAvxXAn/W+oQa0ZAfk=" crossorigin="anonymous"></script>                <div id="58869f04-666a-4724-b1f0-1ba7cd9b4e24" class="plotly-graph-div" style="height:620px; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("58869f04-666a-4724-b1f0-1ba7cd9b4e24")) {                    Plotly.newPlot(                        "58869f04-666a-4724-b1f0-1ba7cd9b4e24",                        [{"hovertemplate":"color=BRICS\u003cbr\u003eAxis 1 (63.80%)=%{x}\u003cbr\u003eAxis 2 (7.30%)=%{y}\u003cbr\u003etext=%{text}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"BRICS","marker":{"color":"#636efa","symbol":"circle","size":12},"mode":"markers+text","name":"BRICS","orientation":"v","showlegend":true,"text":["ARE","BRA","CHN","EGY","IND","IRN","ZAF"],"x":{"dtype":"f8","bdata":"nesoNA\u002fBIUAuG9IkwHAcwBiqZae+at4\u002fpAuZIwcDIsA0r\u002fWmNC0OwH10ypi17iPAT8EejH2YCcA="},"xaxis":"x","y":{"dtype":"f8","bdata":"VFQen6Tt0j8MIW\u002fo31T7v\u002foQTEdcpRnADCiRuxhX5r8pg\u002fkLSxcWwJpUop+6EADA8IoWY9sG978="},"yaxis":"y","type":"scatter","textposition":"bottom right"},{"hovertemplate":"color=OECD\u003cbr\u003eAxis 1 (63.80%)=%{x}\u003cbr\u003eAxis 2 (7.30%)=%{y}\u003cbr\u003etext=%{text}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"OECD","marker":{"color":"#EF553B","symbol":"circle","size":12},"mode":"markers+text","name":"OECD","orientation":"v","showlegend":true,"text":["AUS","AUT","BEL","BGR","CAN","CHE","CHL","COL","CZE","DEU","DNK","ESP","EST","FIN","FRA","GBR","GRC","HUN","IRL","ISL","ISR","ITA","JPN","KOR","LTU","LUX","MEX","NLD","NOR","NZL","POL","PRT","SVK","SVN","SWE","TUR","USA"],"x":{"dtype":"f8","bdata":"RRXBLEZTE0AlsXNoViIUQJGIoOjEcBhA70aw6qSLGsB8SCXbhdQYQPpJ3R2jdCdAOYeJt3O4xr\u002fnr8IEPWQawI3sJIpYX6c\u002fRFUXNa7TIEAxK18Q0GMcQOJZpDH96qg\u002fi8vuF+hTBED0uQteVOUiQM7bLwtEVhFAPMSesH3BIEA77G7lcLMdwBtUDhjuWxjARNhc\u002fQ4vFEAioaOHNbkOQPT8FeJA9BBA4OnDj6c+CcBheMVjXNAiQPE\u002f6e4kxAFAuJSVRaWG\u002fb8QCaZfC78eQAYciCvOKBTA1iGNlJPYI0Ar0MkYPLcbQN2Mh8pZ4RpAhKHri8ybDMB67ViF\u002fxvXv+8kTNA\u002fXQzA0g1gCWFPCMBZWWB0hrUiQFoeJQgEdhTA\u002fDYhpKmIJEA="},"xaxis":"x","y":{"dtype":"f8","bdata":"aCS+6PKb4z+oiuzDqqarv8juNGk4LLk\u002fQvP2D37K5z8DU00YqivRv3CKN4dtC8c\u002fl53rnbJm67\u002fKx8KPykLSv5I9S28Z8sY\u002f158xSlyFAsC+\u002f885B0f7P5W6Sh\u002fwrPm\u002fErNHcssUDUAw8Dpu5VgGQDW\u002fk1PjbP2\u002fuaHpqhJU7b8eLN+C7hzsPxIM4arU75g\u002fUStNWT5h9j9m5N2iIcgVQI6zzoETrOs\u002f8CsLGtTYA8CjpnmJs+MHwJSkauUa1gTA2vFUg3HfAUBdF8DVQLQCQOFROmFKnQbA\u002f+TwaLtY1r8AMzPlaGj9P+X4B2csHwtA3BdLlCAw8r8a+8SUyR\u002fvP7h0f\u002fpenOM\u002fe+QbcJGK\u002fj+BMSnNBCzwP0i4ccW4t\u002fu\u002f8Va4RDXgEcA="},"yaxis":"y","type":"scatter","textposition":"bottom right"},{"hovertemplate":"color=OTRO\u003cbr\u003eAxis 1 (63.80%)=%{x}\u003cbr\u003eAxis 2 (7.30%)=%{y}\u003cbr\u003etext=%{text}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"OTRO","marker":{"color":"#00cc96","symbol":"circle","size":12},"mode":"markers+text","name":"OTRO","orientation":"v","showlegend":true,"text":["GHA","JOR","KEN","LBN","NGA","QAT","ROU","SAU","SEN","VNM","ZWE"],"x":{"dtype":"f8","bdata":"3Mw25bmxH8C9uZllw50OwHpTchQQ\u002fBfAWks1TawTIMDi5LG8rgYmwEc5X5EneB5A4pHP\u002fCtLHsAabpMNRgvgP2PgZShFICPABVoks8cwH8ANThNd4JYrwA=="},"xaxis":"x","y":{"dtype":"f8","bdata":"PrbC4Q8Y0D8QDNG4d5IGQPsyX9O8Wfc\u002fOhB57PdZB0B4z1gjz5Llv6Soekiyvu4\u002fS1\u002f7MR9j279cvGDWBAv2v7cO783\u002fmQVAun23rB\u002fq\u002fr9v+NcwmVoTQA=="},"yaxis":"y","type":"scatter","textposition":"bottom right"},{"hoverinfo":"text","hovertext":"1-2014","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"1-2014","showlegend":false,"text":[null,"1-2014"],"textposition":"top center","x":[0,6.641548652270111],"y":[0,1.6234715178192474],"type":"scatter"},{"hoverinfo":"text","hovertext":"2-2014","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"2-2014","showlegend":false,"text":[null,"2-2014"],"textposition":"top center","x":[0,6.529871408574946],"y":[0,-0.6212161500561837],"type":"scatter"},{"hoverinfo":"text","hovertext":"3-2014","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"3-2014","showlegend":false,"text":[null,"3-2014"],"textposition":"top center","x":[0,4.471835189268813],"y":[0,-2.844239196760127],"type":"scatter"},{"hoverinfo":"text","hovertext":"4-2014","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"4-2014","showlegend":false,"text":[null,"4-2014"],"textposition":"top center","x":[0,4.814821942686203],"y":[0,2.920248864424337],"type":"scatter"},{"hoverinfo":"text","hovertext":"5-2014","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"5-2014","showlegend":false,"text":[null,"5-2014"],"textposition":"top center","x":[0,6.81791838210673],"y":[0,1.5734734757795727],"type":"scatter"},{"hoverinfo":"text","hovertext":"6-2014","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"6-2014","showlegend":false,"text":[null,"6-2014"],"textposition":"top center","x":[0,6.042668511201429],"y":[0,-0.2600807319881991],"type":"scatter"},{"hoverinfo":"text","hovertext":"7-2014","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"7-2014","showlegend":false,"text":[null,"7-2014"],"textposition":"top center","x":[0,5.083353748295307],"y":[0,0.3905252932655592],"type":"scatter"},{"hoverinfo":"text","hovertext":"8-2014","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"8-2014","showlegend":false,"text":[null,"8-2014"],"textposition":"top center","x":[0,5.7911497118599105],"y":[0,0.022840911039654042],"type":"scatter"},{"hoverinfo":"text","hovertext":"9-2014","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"9-2014","showlegend":false,"text":[null,"9-2014"],"textposition":"top center","x":[0,6.864981633442064],"y":[0,1.6721381802253534],"type":"scatter"},{"hoverinfo":"text","hovertext":"10-2014","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"10-2014","showlegend":false,"text":[null,"10-2014"],"textposition":"top center","x":[0,2.2127100575474077],"y":[0,-6.854396931747446],"type":"scatter"},{"hoverinfo":"text","hovertext":"11-2014","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"11-2014","showlegend":false,"text":[null,"11-2014"],"textposition":"top center","x":[0,6.964272314672387],"y":[0,-0.836664060506701],"type":"scatter"},{"hoverinfo":"text","hovertext":"12-2014","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"12-2014","showlegend":false,"text":[null,"12-2014"],"textposition":"top center","x":[0,6.979163185323908],"y":[0,-0.3164577410233],"type":"scatter"},{"hoverinfo":"text","hovertext":"1-2015","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"1-2015","showlegend":false,"text":[null,"1-2015"],"textposition":"top center","x":[0,6.787336534775101],"y":[0,1.7008915761806669],"type":"scatter"},{"hoverinfo":"text","hovertext":"2-2015","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"2-2015","showlegend":false,"text":[null,"2-2015"],"textposition":"top center","x":[0,6.705950106574285],"y":[0,-0.5251906724965395],"type":"scatter"},{"hoverinfo":"text","hovertext":"3-2015","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"3-2015","showlegend":false,"text":[null,"3-2015"],"textposition":"top center","x":[0,4.538867264171369],"y":[0,-2.88239041143375],"type":"scatter"},{"hoverinfo":"text","hovertext":"4-2015","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"4-2015","showlegend":false,"text":[null,"4-2015"],"textposition":"top center","x":[0,5.077890175408346],"y":[0,2.751844710131366],"type":"scatter"},{"hoverinfo":"text","hovertext":"5-2015","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"5-2015","showlegend":false,"text":[null,"5-2015"],"textposition":"top center","x":[0,6.72724912276607],"y":[0,1.7636469857657981],"type":"scatter"},{"hoverinfo":"text","hovertext":"6-2015","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"6-2015","showlegend":false,"text":[null,"6-2015"],"textposition":"top center","x":[0,6.309681016256528],"y":[0,-0.37288469793900925],"type":"scatter"},{"hoverinfo":"text","hovertext":"7-2015","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"7-2015","showlegend":false,"text":[null,"7-2015"],"textposition":"top center","x":[0,5.510872968536126],"y":[0,0.5604783077522972],"type":"scatter"},{"hoverinfo":"text","hovertext":"8-2015","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"8-2015","showlegend":false,"text":[null,"8-2015"],"textposition":"top center","x":[0,5.947887707775623],"y":[0,0.116996919919295],"type":"scatter"},{"hoverinfo":"text","hovertext":"9-2015","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"9-2015","showlegend":false,"text":[null,"9-2015"],"textposition":"top center","x":[0,6.884340653461304],"y":[0,1.612882951651106],"type":"scatter"},{"hoverinfo":"text","hovertext":"10-2015","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"10-2015","showlegend":false,"text":[null,"10-2015"],"textposition":"top center","x":[0,2.018136487588681],"y":[0,-6.911221379696015],"type":"scatter"},{"hoverinfo":"text","hovertext":"11-2015","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"11-2015","showlegend":false,"text":[null,"11-2015"],"textposition":"top center","x":[0,7.012572261484454],"y":[0,-0.6491918536813648],"type":"scatter"},{"hoverinfo":"text","hovertext":"12-2015","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"12-2015","showlegend":false,"text":[null,"12-2015"],"textposition":"top center","x":[0,7.025843102788706],"y":[0,-0.025075681161488627],"type":"scatter"},{"hoverinfo":"text","hovertext":"1-2016","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"1-2016","showlegend":false,"text":[null,"1-2016"],"textposition":"top center","x":[0,6.87026835804822],"y":[0,1.6400526081326132],"type":"scatter"},{"hoverinfo":"text","hovertext":"2-2016","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"2-2016","showlegend":false,"text":[null,"2-2016"],"textposition":"top center","x":[0,6.8307330546240035],"y":[0,-0.5775942274778272],"type":"scatter"},{"hoverinfo":"text","hovertext":"3-2016","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"3-2016","showlegend":false,"text":[null,"3-2016"],"textposition":"top center","x":[0,-4.457227155216585],"y":[0,0.35215973272694095],"type":"scatter"},{"hoverinfo":"text","hovertext":"4-2016","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"4-2016","showlegend":false,"text":[null,"4-2016"],"textposition":"top center","x":[0,5.389804207918828],"y":[0,2.669445315574804],"type":"scatter"},{"hoverinfo":"text","hovertext":"5-2016","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"5-2016","showlegend":false,"text":[null,"5-2016"],"textposition":"top center","x":[0,6.706326621883974],"y":[0,1.5897018480857623],"type":"scatter"},{"hoverinfo":"text","hovertext":"6-2016","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"6-2016","showlegend":false,"text":[null,"6-2016"],"textposition":"top center","x":[0,6.702368459660456],"y":[0,-0.5641631025932977],"type":"scatter"},{"hoverinfo":"text","hovertext":"7-2016","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"7-2016","showlegend":false,"text":[null,"7-2016"],"textposition":"top center","x":[0,5.820174345073108],"y":[0,0.5742506948176876],"type":"scatter"},{"hoverinfo":"text","hovertext":"8-2016","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"8-2016","showlegend":false,"text":[null,"8-2016"],"textposition":"top center","x":[0,6.065582356250803],"y":[0,-0.005285145549595487],"type":"scatter"},{"hoverinfo":"text","hovertext":"9-2016","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"9-2016","showlegend":false,"text":[null,"9-2016"],"textposition":"top center","x":[0,6.963253612707389],"y":[0,1.264656633049972],"type":"scatter"},{"hoverinfo":"text","hovertext":"10-2016","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"10-2016","showlegend":false,"text":[null,"10-2016"],"textposition":"top center","x":[0,2.344696842189453],"y":[0,-6.177964284260258],"type":"scatter"},{"hoverinfo":"text","hovertext":"11-2016","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"11-2016","showlegend":false,"text":[null,"11-2016"],"textposition":"top center","x":[0,7.01277112481095],"y":[0,-0.6827350868019828],"type":"scatter"},{"hoverinfo":"text","hovertext":"12-2016","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"12-2016","showlegend":false,"text":[null,"12-2016"],"textposition":"top center","x":[0,6.990390246201816],"y":[0,-0.053679424183336016],"type":"scatter"},{"hoverinfo":"text","hovertext":"1-2017","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"1-2017","showlegend":false,"text":[null,"1-2017"],"textposition":"top center","x":[0,6.939044110535084],"y":[0,1.3250641561316312],"type":"scatter"},{"hoverinfo":"text","hovertext":"2-2017","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"2-2017","showlegend":false,"text":[null,"2-2017"],"textposition":"top center","x":[0,6.580145941612597],"y":[0,-0.8086811721635309],"type":"scatter"},{"hoverinfo":"text","hovertext":"3-2017","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"3-2017","showlegend":false,"text":[null,"3-2017"],"textposition":"top center","x":[0,3.61318491076451],"y":[0,-2.8494079785538213],"type":"scatter"},{"hoverinfo":"text","hovertext":"4-2017","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"4-2017","showlegend":false,"text":[null,"4-2017"],"textposition":"top center","x":[0,4.751140155640371],"y":[0,3.236466916224137],"type":"scatter"},{"hoverinfo":"text","hovertext":"5-2017","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"5-2017","showlegend":false,"text":[null,"5-2017"],"textposition":"top center","x":[0,6.887694762978056],"y":[0,1.2675526686370062],"type":"scatter"},{"hoverinfo":"text","hovertext":"6-2017","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"6-2017","showlegend":false,"text":[null,"6-2017"],"textposition":"top center","x":[0,6.871901524308558],"y":[0,-1.047756839727433],"type":"scatter"},{"hoverinfo":"text","hovertext":"7-2017","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"7-2017","showlegend":false,"text":[null,"7-2017"],"textposition":"top center","x":[0,5.842457013645957],"y":[0,0.14848646861237147],"type":"scatter"},{"hoverinfo":"text","hovertext":"8-2017","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"8-2017","showlegend":false,"text":[null,"8-2017"],"textposition":"top center","x":[0,6.254500041501838],"y":[0,-0.008891851942377097],"type":"scatter"},{"hoverinfo":"text","hovertext":"9-2017","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"9-2017","showlegend":false,"text":[null,"9-2017"],"textposition":"top center","x":[0,7.04427700131414],"y":[0,1.2117617100957323],"type":"scatter"},{"hoverinfo":"text","hovertext":"10-2017","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"10-2017","showlegend":false,"text":[null,"10-2017"],"textposition":"top center","x":[0,2.6931621025936554],"y":[0,-6.366560588242656],"type":"scatter"},{"hoverinfo":"text","hovertext":"11-2017","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"11-2017","showlegend":false,"text":[null,"11-2017"],"textposition":"top center","x":[0,7.053184829657314],"y":[0,-0.788557547924668],"type":"scatter"},{"hoverinfo":"text","hovertext":"12-2017","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"12-2017","showlegend":false,"text":[null,"12-2017"],"textposition":"top center","x":[0,6.987152229989029],"y":[0,-0.40858249903806393],"type":"scatter"},{"hoverinfo":"text","hovertext":"1-2018","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"1-2018","showlegend":false,"text":[null,"1-2018"],"textposition":"top center","x":[0,7.090720688275165],"y":[0,0.7448120875111022],"type":"scatter"},{"hoverinfo":"text","hovertext":"2-2018","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"2-2018","showlegend":false,"text":[null,"2-2018"],"textposition":"top center","x":[0,6.360896798152316],"y":[0,-1.7838279157040575],"type":"scatter"},{"hoverinfo":"text","hovertext":"3-2018","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"3-2018","showlegend":false,"text":[null,"3-2018"],"textposition":"top center","x":[0,5.951406750686671],"y":[0,0.8851760546447911],"type":"scatter"},{"hoverinfo":"text","hovertext":"4-2018","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"4-2018","showlegend":false,"text":[null,"4-2018"],"textposition":"top center","x":[0,3.3219984914680394],"y":[0,-1.2820583497381004],"type":"scatter"},{"hoverinfo":"text","hovertext":"5-2018","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"5-2018","showlegend":false,"text":[null,"5-2018"],"textposition":"top center","x":[0,4.982653408312759],"y":[0,-0.22264161538821764],"type":"scatter"},{"hoverinfo":"text","hovertext":"6-2018","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"6-2018","showlegend":false,"text":[null,"6-2018"],"textposition":"top center","x":[0,6.829137174684303],"y":[0,0.895826478338906],"type":"scatter"},{"hoverinfo":"text","hovertext":"7-2018","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"7-2018","showlegend":false,"text":[null,"7-2018"],"textposition":"top center","x":[0,5.5306386571107105],"y":[0,-1.524871405724752],"type":"scatter"},{"hoverinfo":"text","hovertext":"8-2018","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"8-2018","showlegend":false,"text":[null,"8-2018"],"textposition":"top center","x":[0,6.20437284980068],"y":[0,0.1827946260373834],"type":"scatter"},{"hoverinfo":"text","hovertext":"9-2018","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"9-2018","showlegend":false,"text":[null,"9-2018"],"textposition":"top center","x":[0,6.598149596004592],"y":[0,-0.25953777810544415],"type":"scatter"},{"hoverinfo":"text","hovertext":"10-2018","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"10-2018","showlegend":false,"text":[null,"10-2018"],"textposition":"top center","x":[0,-0.10876172954448564],"y":[0,1.308377218659177],"type":"scatter"},{"hoverinfo":"text","hovertext":"11-2018","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"11-2018","showlegend":false,"text":[null,"11-2018"],"textposition":"top center","x":[0,6.040711418737452],"y":[0,0.24245161732995216],"type":"scatter"},{"hoverinfo":"text","hovertext":"12-2018","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"12-2018","showlegend":false,"text":[null,"12-2018"],"textposition":"top center","x":[0,6.662845225128569],"y":[0,-1.5675332779940767],"type":"scatter"},{"hoverinfo":"text","hovertext":"1-2019","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"1-2019","showlegend":false,"text":[null,"1-2019"],"textposition":"top center","x":[0,6.716757885728488],"y":[0,-0.18697701160170532],"type":"scatter"},{"hoverinfo":"text","hovertext":"2-2019","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"2-2019","showlegend":false,"text":[null,"2-2019"],"textposition":"top center","x":[0,6.303567094213274],"y":[0,-1.7724809430337047],"type":"scatter"},{"hoverinfo":"text","hovertext":"3-2019","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"3-2019","showlegend":false,"text":[null,"3-2019"],"textposition":"top center","x":[0,5.682153041775336],"y":[0,0.44313739442104333],"type":"scatter"},{"hoverinfo":"text","hovertext":"4-2019","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"4-2019","showlegend":false,"text":[null,"4-2019"],"textposition":"top center","x":[0,4.443324438984668],"y":[0,-1.0754955726274804],"type":"scatter"},{"hoverinfo":"text","hovertext":"5-2019","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"5-2019","showlegend":false,"text":[null,"5-2019"],"textposition":"top center","x":[0,4.87943905141048],"y":[0,-0.3889693482567613],"type":"scatter"},{"hoverinfo":"text","hovertext":"6-2019","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"6-2019","showlegend":false,"text":[null,"6-2019"],"textposition":"top center","x":[0,6.722627132593233],"y":[0,1.742488200114646],"type":"scatter"},{"hoverinfo":"text","hovertext":"7-2019","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"7-2019","showlegend":false,"text":[null,"7-2019"],"textposition":"top center","x":[0,5.898738944153225],"y":[0,-1.254186647493427],"type":"scatter"},{"hoverinfo":"text","hovertext":"8-2019","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"8-2019","showlegend":false,"text":[null,"8-2019"],"textposition":"top center","x":[0,5.9871881995333105],"y":[0,0.4712023297223937],"type":"scatter"},{"hoverinfo":"text","hovertext":"9-2019","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"9-2019","showlegend":false,"text":[null,"9-2019"],"textposition":"top center","x":[0,6.698149219579247],"y":[0,-0.5580024387460758],"type":"scatter"},{"hoverinfo":"text","hovertext":"10-2019","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"10-2019","showlegend":false,"text":[null,"10-2019"],"textposition":"top center","x":[0,0.07791664049153052],"y":[0,1.2589791509394805],"type":"scatter"},{"hoverinfo":"text","hovertext":"11-2019","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"11-2019","showlegend":false,"text":[null,"11-2019"],"textposition":"top center","x":[0,6.2122006091213695],"y":[0,0.81997036687027],"type":"scatter"},{"hoverinfo":"text","hovertext":"12-2019","line":{"color":"gray","width":2},"marker":{"angleref":"previous","color":"black","size":10,"symbol":"arrow-bar-up"},"mode":"lines+text+markers","name":"12-2019","showlegend":false,"text":[null,"12-2019"],"textposition":"top center","x":[0,6.670722143613564],"y":[0,-1.4744063024801684],"type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Axis 1 (63.80%)"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Axis 2 (7.30%)"}},"legend":{"title":{"text":"color"},"tracegroupgap":0},"title":{"text":"HJ-Biplot \u2014 Pa\u00edses (puntos) vs. Pilares\u00d7A\u00f1o (vectores)"},"margin":{"t":120,"b":50},"updatemenus":[{"active":0,"bgcolor":"white","bordercolor":"#cccccc","buttons":[{"args":[{"visible":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]}],"label":"Todos","method":"update"},{"args":[{"visible":[true,true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false]}],"label":"1","method":"update"},{"args":[{"visible":[true,true,true,true,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false]}],"label":"2","method":"update"},{"args":[{"visible":[true,true,true,true,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false]}],"label":"3","method":"update"},{"args":[{"visible":[true,true,true,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false]}],"label":"4","method":"update"},{"args":[{"visible":[true,true,true,true,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false]}],"label":"5","method":"update"},{"args":[{"visible":[true,true,true,true,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false]}],"label":"6","method":"update"},{"args":[{"visible":[true,true,true,true,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false]}],"label":"7","method":"update"},{"args":[{"visible":[true,true,true,true,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false]}],"label":"8","method":"update"},{"args":[{"visible":[true,true,true,true,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false]}],"label":"9","method":"update"},{"args":[{"visible":[true,true,true,true,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false]}],"label":"10","method":"update"},{"args":[{"visible":[true,true,true,true,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false]}],"label":"11","method":"update"},{"args":[{"visible":[true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true]}],"label":"12","method":"update"}],"direction":"down","font":{"size":12},"pad":{"r":10,"t":10},"showactive":true,"x":0.0,"xanchor":"left","y":1.18,"yanchor":"top"},{"active":0,"bgcolor":"white","bordercolor":"#cccccc","buttons":[{"args":[{"visible":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]}],"label":"Todos","method":"update"},{"args":[{"visible":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]}],"label":"2014","method":"update"},{"args":[{"visible":[true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true,true,true,true,true,true,true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]}],"label":"2015","method":"update"},{"args":[{"visible":[true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true,true,true,true,true,true,true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]}],"label":"2016","method":"update"},{"args":[{"visible":[true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true,true,true,true,true,true,true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]}],"label":"2017","method":"update"},{"args":[{"visible":[true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true,true,true,true,true,true,true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false]}],"label":"2018","method":"update"},{"args":[{"visible":[true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true,true,true,true,true,true,true,true,true,true]}],"label":"2019","method":"update"}],"direction":"down","font":{"size":12},"pad":{"r":10,"t":10},"showactive":true,"x":0.18,"xanchor":"left","y":1.18,"yanchor":"top"}],"height":620,"plot_bgcolor":"#F4F8FB"},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('58869f04-666a-4724-b1f0-1ba7cd9b4e24');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+</div>
+<div class="insight-box">
+<p><strong>Cómo leer el Biplot:</strong> el <strong>eje 1</strong> (~64 % de varianza) separa economías emergentes (izquierda) de economías consolidadas (derecha). El <strong>eje 2</strong> (~7 %) discrimina principalmente según tamaño de mercado (pilar 10) hasta 2017; desde 2018, pasa a ser dominado por pilares de infraestructura y salud. Los vectores del <strong>pilar 10</strong> en 2018–2019 son notablemente más cortos — señal de pérdida de poder discriminante tras el rediseño conceptual.</p>
+</div>
+<hr>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/arustico\.github\.io\/arielnunezsalinas\.github\.io\/gci");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
