@@ -15,6 +15,13 @@ export default defineConfig({
                 {
                     src:"partials",
                     dest: "."
+                },
+                // Sitio Quarto GCI — se copia tal cual a dist/gci/
+                // Quarto genera sus propios CSS/JS en site_libs/,
+                // no necesita procesamiento de Vite.
+                {
+                    src: 'gci/**/*',
+                    dest: 'gci'
                 }
             ]
 
