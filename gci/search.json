@@ -39,21 +39,21 @@
     "href": "eda.html",
     "title": "Análisis Exploratorio de Datos (EDA)",
     "section": "",
-    "text": "✔ Entorno configurado correctamente\n  · Proyecto  : /home/ariel/Escritorio/Proyectos Profesionales/1. Presentacion/2. Proyectos Portafolios/2. Análisis de Indices GCI\n  · Datos     : /home/ariel/Escritorio/Proyectos Profesionales/1. Presentacion/2. Proyectos Portafolios/2. Análisis de Indices GCI/data/processed\n  · Figuras   : /home/ariel/Escritorio/Proyectos Profesionales/1. Presentacion/2. Proyectos Portafolios/2. Análisis de Indices GCI/doc/figures"
+    "text": "✔ Entorno configurado correctamente\n  · Proyecto  : /home/ariel/Escritorio/Proyectos Profesionales/1. Presentacion/2. Proyectos Portafolios/2. Análisis de Indices GCI\n  · Datos     : /home/ariel/Escritorio/Proyectos Profesionales/1. Presentacion/2. Proyectos Portafolios/2. Análisis de Indices GCI/data/processed\n  · Figuras   : /home/ariel/Escritorio/Proyectos Profesionales/1. Presentacion/2. Proyectos Portafolios/2. Análisis de Indices GCI/reportes/figures"
   },
   {
     "objectID": "eda.html#librerías-y-parámetros-globales",
     "href": "eda.html#librerías-y-parámetros-globales",
     "title": "Análisis Exploratorio de Datos (EDA)",
     "section": "",
-    "text": "✔ Entorno configurado correctamente\n  · Proyecto  : /home/ariel/Escritorio/Proyectos Profesionales/1. Presentacion/2. Proyectos Portafolios/2. Análisis de Indices GCI\n  · Datos     : /home/ariel/Escritorio/Proyectos Profesionales/1. Presentacion/2. Proyectos Portafolios/2. Análisis de Indices GCI/data/processed\n  · Figuras   : /home/ariel/Escritorio/Proyectos Profesionales/1. Presentacion/2. Proyectos Portafolios/2. Análisis de Indices GCI/doc/figures"
+    "text": "✔ Entorno configurado correctamente\n  · Proyecto  : /home/ariel/Escritorio/Proyectos Profesionales/1. Presentacion/2. Proyectos Portafolios/2. Análisis de Indices GCI\n  · Datos     : /home/ariel/Escritorio/Proyectos Profesionales/1. Presentacion/2. Proyectos Portafolios/2. Análisis de Indices GCI/data/processed\n  · Figuras   : /home/ariel/Escritorio/Proyectos Profesionales/1. Presentacion/2. Proyectos Portafolios/2. Análisis de Indices GCI/reportes/figures"
   },
   {
     "objectID": "eda.html#indicadores-a-lo-largo-del-período",
     "href": "eda.html#indicadores-a-lo-largo-del-período",
     "title": "Análisis Exploratorio de Datos (EDA)",
     "section": "3.1 Indicadores a lo largo del período",
-    "text": "3.1 Indicadores a lo largo del período\nUna primera señal de los cambios metodológicos aparece al examinar cuántos indicadores permanecieron presentes a lo largo de todos los años de estudio.\n\n\n                            \n                                            \n\n\n\n  Solo 5 indicadores estuvieron presentes en los 6 años de estudio —\n  evidencia directa de la alta rotación de indicadores entre metodologías."
+    "text": "3.1 Indicadores a lo largo del período\nUna primera señal de los cambios metodológicos aparece al examinar cuántos indicadores permanecieron presentes a lo largo de todos los años de estudio.\n\n\n                            \n                                            \n\n\n\n  Solo 5 indicadores estuvieron presentes en los 6 años de estudio —\n  evidencia directa de la alta rotación de indicadores entre años y metodologías."
   },
   {
     "objectID": "eda.html#resumen-de-cobertura-por-año",
@@ -67,7 +67,7 @@
     "href": "eda.html#valores-faltantes-por-país",
     "title": "Análisis Exploratorio de Datos (EDA)",
     "section": "3.3 Valores faltantes por país",
-    "text": "3.3 Valores faltantes por país\n\n\n                            \n                                            \n\n\n\n  Solo Líbano y Emiratos Árabes Unidos superan levemente el 4 % de datos\n  faltantes; el resto de los países están bien cubiertos."
+    "text": "3.3 Valores faltantes por país\n\n\n                            \n                                            \n\n\n\n  Africa del sur es el país con mayor falta de datos (14%), le siguen Líbano y Emiratos Árabes Unidos superan levemente el 4 % de datos\n  faltantes; el resto de los países están bien cubiertos."
   },
   {
     "objectID": "eda.html#distribución-de-indicadores-por-pilar-y-año",
@@ -102,7 +102,7 @@
     "href": "biplot.html#agrupamiento-por-año",
     "title": "Agrupamiento y Biplot",
     "section": "1.1 Agrupamiento por año",
-    "text": "1.1 Agrupamiento por año\n\n\n\n\n\n\n\n\n\n\nResultado clave: el dendrograma separa claramente dos grupos — 2014–2017 vs. 2018–2019. Con un coeficiente Cophenético de ~0.98, este agrupamiento captura fielmente la geometría real de los datos. La brecha entre ambos grupos es la “huella” del cambio metodológico."
+    "text": "1.1 Agrupamiento por año\n\n\n\n\n\n\n\n\n\n\nResultado clave: el dendrograma separa claramente dos grupos — 2014–2017 vs. 2018–2019. Con un coeficiente Cophenético de ~0.93, este agrupamiento captura fielmente la geometría real de los datos. La brecha entre ambos grupos es la “huella” del cambio metodológico."
   },
   {
     "objectID": "biplot.html#agrupamiento-por-organización",
