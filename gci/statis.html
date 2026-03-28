@@ -104,6 +104,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -174,7 +217,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#lectura-y-preparación-de-la-k-tabla" id="toc-lectura-y-preparación-de-la-k-tabla" class="nav-link" data-scroll-target="#lectura-y-preparación-de-la-k-tabla"><span class="header-section-number">1.2</span> Lectura y preparación de la K-tabla</a></li>
   <li><a href="#construcción-de-la-k-tabla-y-aplicación-de-statis" id="toc-construcción-de-la-k-tabla-y-aplicación-de-statis" class="nav-link" data-scroll-target="#construcción-de-la-k-tabla-y-aplicación-de-statis"><span class="header-section-number">1.3</span> Construcción de la K-tabla y aplicación de STATIS</a></li>
   <li><a href="#interestructura-similitud-entre-tablas-anuales" id="toc-interestructura-similitud-entre-tablas-anuales" class="nav-link" data-scroll-target="#interestructura-similitud-entre-tablas-anuales"><span class="header-section-number">1.4</span> Interestructura: similitud entre tablas anuales</a></li>
-  <li><a href="#compromiso-y-trayectorias-de-pilares" id="toc-compromiso-y-trayectorias-de-pilares" class="nav-link" data-scroll-target="#compromiso-y-trayectorias-de-pilares"><span class="header-section-number">1.5</span> Compromiso y trayectorias de pilares</a></li>
+  <li><a href="#compromiso-y-trayectorias-de-pilares" id="toc-compromiso-y-trayectorias-de-pilares" class="nav-link" data-scroll-target="#compromiso-y-trayectorias-de-pilares"><span class="header-section-number">1.5</span> Compromiso y trayectorias de pilares</a>
+  <ul class="collapse">
+  <li><a href="#cuanto-cambió-estructuralmente-un-pilar" id="toc-cuanto-cambió-estructuralmente-un-pilar" class="nav-link" data-scroll-target="#cuanto-cambió-estructuralmente-un-pilar"><span class="header-section-number">1.5.1</span> ¿Cuanto cambió estructuralmente un pilar?</a></li>
+  </ul></li>
+  <li><a href="#validación-de-statis" id="toc-validación-de-statis" class="nav-link" data-scroll-target="#validación-de-statis"><span class="header-section-number">1.6</span> Validación de Statis</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -297,12 +344,627 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="compromiso-y-trayectorias-de-pilares" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="compromiso-y-trayectorias-de-pilares"><span class="header-section-number">1.5</span> Compromiso y trayectorias de pilares</h2>
+<p>Habitualmente, se comparan pilares a lo largo de periodos, sin considerar los cambios metodológicos. A continuación STATIS permite cuantificar y visualizar si los cambios de los pilares a lo largo del periodo, corresponden a factores económicos, estructurales, o una mezcla de ambos. Para determinarlo se analizó los cambios a nivel estructural de los pilares año a año.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
 <p><img src="statis_files/figure-html/statis-compromise-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
+</div>
+</div>
+</div>
+<section id="cuanto-cambió-estructuralmente-un-pilar" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="cuanto-cambió-estructuralmente-un-pilar"><span class="header-section-number">1.5.1</span> ¿Cuanto cambió estructuralmente un pilar?</h3>
+<table class="method-table caption-top table">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Rangos de cambio (%) del Pilar</th>
+<th data-quarto-table-cell-role="th">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt; 5%</td>
+<td>Ruido técnico o variación esperable.</td>
+</tr>
+<tr class="even">
+<td>5% – 15%</td>
+<td>Cambio leve / ajuste metodológico menor.</td>
+</tr>
+<tr class="odd">
+<td>15% – 25%</td>
+<td>Cambio estructural moderado.</td>
+</tr>
+<tr class="even">
+<td>25%</td>
+<td>Cambio estructural fuerte.</td>
+</tr>
+</tbody>
+</table>
+<p>Para cuantificar el cambio estructural del pilar se calculó utilizando el promedio del coeficiente de correlación que obtuvo el pilar con el eje 1 del compromiso, separados en dos grupos: uno antes del cambio metodológico y el siguiente después del cambio metodológico. La siguiente tabla resume el criterio para determinar que tan importante es el cambio estructural del pilar. Es decir</p>
+<p><span class="math display">
+  \%\triangle P_n= 100 \times \frac{P_{n,\,C1.post} - P_{n,\,C1.prev}}{P_{n,\,C1.prev}}
+</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="jyrzmzapij" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jyrzmzapij table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#jyrzmzapij thead, #jyrzmzapij tbody, #jyrzmzapij tfoot, #jyrzmzapij tr, #jyrzmzapij td, #jyrzmzapij th {
+  border-style: none;
+}
+
+#jyrzmzapij p {
+  margin: 0;
+  padding: 0;
+}
+
+#jyrzmzapij .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#jyrzmzapij .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#jyrzmzapij .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#jyrzmzapij .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#jyrzmzapij .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jyrzmzapij .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jyrzmzapij .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jyrzmzapij .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#jyrzmzapij .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#jyrzmzapij .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#jyrzmzapij .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#jyrzmzapij .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#jyrzmzapij .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#jyrzmzapij .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#jyrzmzapij .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#jyrzmzapij .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#jyrzmzapij .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#jyrzmzapij .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#jyrzmzapij .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jyrzmzapij .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#jyrzmzapij .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#jyrzmzapij .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#jyrzmzapij .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jyrzmzapij .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#jyrzmzapij .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#jyrzmzapij .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jyrzmzapij .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jyrzmzapij .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#jyrzmzapij .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jyrzmzapij .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#jyrzmzapij .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jyrzmzapij .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jyrzmzapij .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jyrzmzapij .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jyrzmzapij .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jyrzmzapij .gt_left {
+  text-align: left;
+}
+
+#jyrzmzapij .gt_center {
+  text-align: center;
+}
+
+#jyrzmzapij .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#jyrzmzapij .gt_font_normal {
+  font-weight: normal;
+}
+
+#jyrzmzapij .gt_font_bold {
+  font-weight: bold;
+}
+
+#jyrzmzapij .gt_font_italic {
+  font-style: italic;
+}
+
+#jyrzmzapij .gt_super {
+  font-size: 65%;
+}
+
+#jyrzmzapij .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#jyrzmzapij .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#jyrzmzapij .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#jyrzmzapij .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#jyrzmzapij .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#jyrzmzapij .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#jyrzmzapij .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#jyrzmzapij .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#jyrzmzapij div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<td colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border">Cambio estructural por pilar</td>
+</tr>
+<tr class="gt_col_headings even">
+<th id="Pilar" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Pilar</th>
+<th id="pre" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Pre 2018</th>
+<th id="post" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Post 2018</th>
+<th id="delta_abs" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Δ absoluto</th>
+<th id="delta_pct" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">delta_pct</th>
+<th id="delta_pct_perc" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Δ %</th>
+<th id="cambio_llamativo" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">cambio_llamativo</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="Pilar">10</td>
+<td class="gt_row gt_right" headers="pre">−0.277</td>
+<td class="gt_row gt_right" headers="post">−0.149</td>
+<td class="gt_row gt_right" headers="delta_abs">0.128</td>
+<td class="gt_row gt_right" headers="delta_pct">0.461592435</td>
+<td class="gt_row gt_right" headers="delta_pct_perc">46.16</td>
+<td class="gt_row gt_left" headers="cambio_llamativo">⚠ Alto</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Pilar">5</td>
+<td class="gt_row gt_right" headers="pre">−0.356</td>
+<td class="gt_row gt_right" headers="post">−0.477</td>
+<td class="gt_row gt_right" headers="delta_abs">0.121</td>
+<td class="gt_row gt_right" headers="delta_pct">0.340241355</td>
+<td class="gt_row gt_right" headers="delta_pct_perc">34.02</td>
+<td class="gt_row gt_left" headers="cambio_llamativo">⚠ Alto</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Pilar">2</td>
+<td class="gt_row gt_right" headers="pre">−0.288</td>
+<td class="gt_row gt_right" headers="post">−0.353</td>
+<td class="gt_row gt_right" headers="delta_abs">0.065</td>
+<td class="gt_row gt_right" headers="delta_pct">0.224037782</td>
+<td class="gt_row gt_right" headers="delta_pct_perc">22.40</td>
+<td class="gt_row gt_left" headers="cambio_llamativo">⚠ Alto</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Pilar">3</td>
+<td class="gt_row gt_right" headers="pre">−0.237</td>
+<td class="gt_row gt_right" headers="post">−0.290</td>
+<td class="gt_row gt_right" headers="delta_abs">0.053</td>
+<td class="gt_row gt_right" headers="delta_pct">0.222834932</td>
+<td class="gt_row gt_right" headers="delta_pct_perc">22.28</td>
+<td class="gt_row gt_left" headers="cambio_llamativo">⚠ Alto</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Pilar">12</td>
+<td class="gt_row gt_right" headers="pre">−0.283</td>
+<td class="gt_row gt_right" headers="post">−0.222</td>
+<td class="gt_row gt_right" headers="delta_abs">0.062</td>
+<td class="gt_row gt_right" headers="delta_pct">0.218359490</td>
+<td class="gt_row gt_right" headers="delta_pct_perc">21.84</td>
+<td class="gt_row gt_left" headers="cambio_llamativo">⚠ Alto</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Pilar">9</td>
+<td class="gt_row gt_right" headers="pre">−0.318</td>
+<td class="gt_row gt_right" headers="post">−0.255</td>
+<td class="gt_row gt_right" headers="delta_abs">0.063</td>
+<td class="gt_row gt_right" headers="delta_pct">0.197305479</td>
+<td class="gt_row gt_right" headers="delta_pct_perc">19.73</td>
+<td class="gt_row gt_left" headers="cambio_llamativo">Normal</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Pilar">11</td>
+<td class="gt_row gt_right" headers="pre">−0.329</td>
+<td class="gt_row gt_right" headers="post">−0.282</td>
+<td class="gt_row gt_right" headers="delta_abs">0.047</td>
+<td class="gt_row gt_right" headers="delta_pct">0.142356566</td>
+<td class="gt_row gt_right" headers="delta_pct_perc">14.24</td>
+<td class="gt_row gt_left" headers="cambio_llamativo">Normal</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Pilar">6</td>
+<td class="gt_row gt_right" headers="pre">−0.308</td>
+<td class="gt_row gt_right" headers="post">−0.326</td>
+<td class="gt_row gt_right" headers="delta_abs">0.018</td>
+<td class="gt_row gt_right" headers="delta_pct">0.059331338</td>
+<td class="gt_row gt_right" headers="delta_pct_perc">5.93</td>
+<td class="gt_row gt_left" headers="cambio_llamativo">Normal</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Pilar">8</td>
+<td class="gt_row gt_right" headers="pre">−0.356</td>
+<td class="gt_row gt_right" headers="post">−0.370</td>
+<td class="gt_row gt_right" headers="delta_abs">0.015</td>
+<td class="gt_row gt_right" headers="delta_pct">0.041361176</td>
+<td class="gt_row gt_right" headers="delta_pct_perc">4.14</td>
+<td class="gt_row gt_left" headers="cambio_llamativo">Normal</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Pilar">4</td>
+<td class="gt_row gt_right" headers="pre">−0.305</td>
+<td class="gt_row gt_right" headers="post">−0.313</td>
+<td class="gt_row gt_right" headers="delta_abs">0.008</td>
+<td class="gt_row gt_right" headers="delta_pct">0.025203741</td>
+<td class="gt_row gt_right" headers="delta_pct_perc">2.52</td>
+<td class="gt_row gt_left" headers="cambio_llamativo">Normal</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Pilar">7</td>
+<td class="gt_row gt_right" headers="pre">−0.318</td>
+<td class="gt_row gt_right" headers="post">−0.311</td>
+<td class="gt_row gt_right" headers="delta_abs">0.007</td>
+<td class="gt_row gt_right" headers="delta_pct">0.022694918</td>
+<td class="gt_row gt_right" headers="delta_pct_perc">2.27</td>
+<td class="gt_row gt_left" headers="cambio_llamativo">Normal</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Pilar">1</td>
+<td class="gt_row gt_right" headers="pre">−0.336</td>
+<td class="gt_row gt_right" headers="post">−0.338</td>
+<td class="gt_row gt_right" headers="delta_abs">0.002</td>
+<td class="gt_row gt_right" headers="delta_pct">0.004644885</td>
+<td class="gt_row gt_right" headers="delta_pct_perc">0.46</td>
+<td class="gt_row gt_left" headers="cambio_llamativo">Normal</td>
+</tr>
+</tbody>
+</table>
+
 </div>
 </div>
 </div>
@@ -328,6 +990,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Chile en el mapa RV:</strong> Chile aparece en una zona intermedia, agrupado con países como España y Portugal — economías con mercados de tamaño mediano y un nivel de desarrollo institucional moderadamente alto. Su posición relativa confirma el puesto 33° en el GCI 2019.</p>
 </div>
 <hr>
+</section>
+</section>
+<section id="validación-de-statis" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="validación-de-statis"><span class="header-section-number">1.6</span> Validación de Statis</h2>
+<p>La principal validación de STATIS es a través de los autovalores que se obtienen. Estos son un indicador de cuanta información (variabilidad) de los datos está contenida o es representada por los vectores de estos autovalores. Se espera que el primer autovalor sea mucho mayor que el resto de los ejes porque eso justifica que exista: es decir <span class="math inline">\lambda_{1} &gt;&gt; \lambda_{n+1}</span>, con <span class="math inline">n=1,2...</span>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="statis_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="statis_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>El eje 1 de compromiso de STATIS es el eje que contiene practicamente toda la información de la estructura, separando claramente tipos de economías y el eje 2 del compromiso que aunque es residual, interpretativamente es relevante pues separa economías muy relegadas de economías más consolidadas.</p>
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-value">0.87</div>
+    <div class="kpi-label">Promedio de la matriz RV</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-value">0.484 - 0.992</div>
+    <div class="kpi-label">Rango del matríz RV.</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-value"> &gt;0.979</div>
+    <div class="kpi-label">Promedio de las observaciones del cos2 del eje 1</div>
+  </div>
+</div>
+<p>Los resultados indican que:</p>
+<ul>
+<li><p>Alto primer autovalor: Las estructuras son muy similares. No hay bloques estructurales muy diferenciados y el sistema es fuertemente coherente.</p></li>
+<li><p>La estructura común domina fuertemente: Existen algunos pares de países con similitud moderada (~0.48), y también existen pares casi idénticos (~0.99).</p></li>
+<li><p>El eje 1 captura prácticamente toda la variabilidad de las observaciones: La dimensión real del compromiso es 2, ya que se utilizó un <span class="math inline">nf=2</span> y la suma de los <span class="math inline">cos^2</span> es 1, lo que indica que la estructura inter-tablas es practicamente unidimensional.</p></li>
+</ul>
+<div class="insight-box">
+<p><strong>Globalmente:</strong> No hay “modelos estructurales alternativos”. STATIS muestra muy claramente que hay una sola estructura dominante.</p>
+</div>
 
 
 </section>
